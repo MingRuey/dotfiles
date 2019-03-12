@@ -1,0 +1,4 @@
+# Set up for Zsh aliases
+
+alias python="python3"
+

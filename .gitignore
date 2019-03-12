@@ -1,0 +1,10 @@
+# Ignore test script
+test.sh
+
+# Ignore local setting
+*.local
+
+# Ignore system temperory files
+*.swp
+*.db
+*.log
