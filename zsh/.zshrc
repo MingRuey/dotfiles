@@ -72,8 +72,10 @@ zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
+if [ -d "$HOME/.local/bin" ] ; then
+     export PATH="$HOME/.local/bin:$PATH"
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
