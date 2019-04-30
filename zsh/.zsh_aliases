@@ -2,3 +2,9 @@
 
 alias python="python3"
 
+find_and_go()
+{
+    file=$(find $1 -type f -name $2 -print -quit)
+    echo "Find file $file"
+    cd $(dirname $file)
+}
