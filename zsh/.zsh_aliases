@@ -1,6 +1,7 @@
 # Set up for Zsh aliases
 
 alias python="python3"
+alias code="code-insiders"
 
 find_and_go()
 {

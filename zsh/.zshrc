@@ -63,6 +63,9 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git autojump)
+if [ -f /usr/share/autojump/autojump.sh ]; then 
+    . /usr/share/autojump/autojump.sh
+fi
 
 # Advanced Tab completion
 autoload -U compinit

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Required packages:
-aptgetPKGS="zsh zsh-doc"
+aptgetPKGS="zsh zsh-doc autojump"
 
 echo "Check if $aptgetPKGS installed:"
 sudo apt-get install $aptgetPKGS
