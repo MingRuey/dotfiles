@@ -3,9 +3,27 @@
 alias python="python3"
 alias code="code-insiders"
 
-find_and_go()
+ju()
 {
-    file=$(find $1 -type f -name $2 -print -quit)
-    echo "Find file $file"
-    cd $(dirname $file)
+    if [ -z "$1" ]; then
+        echo "Usage: upto [directory]"
+        return
+    fi
+    local upto=$1
+    cd "${PWD/\/$upto\/*//$upto}"
 }
+
+jd(){
+    if [ -z "$1" ]; then
+        echo "Usage: jd [directory]";
+        return 1
+    else
+        dir=$(find . -type d -name $1 -print -quit)
+        if [ -z $dir ]; then
+            return 0
+        else
+            cd $dir
+        fi
+    fi
+}
+
