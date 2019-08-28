@@ -3,3 +3,5 @@
 	email = imchou239@gmail.com
 [merge]
 	tool = vimdiff
+[core]
+	autocrlf = false

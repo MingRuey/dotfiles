@@ -3,6 +3,9 @@
 alias python="python3"
 alias code="code-insiders"
 
+
+# jump up to the directory with given name
+# if the folder with name not found, stay at pwd
 ju()
 {
     if [ -z "$1" ]; then
@@ -13,6 +16,9 @@ ju()
     cd "${PWD/\/$upto\/*//$upto}"
 }
 
+
+# jump down to the directory with given name
+# if the folder with name not found, stay at pwd
 jd(){
     if [ -z "$1" ]; then
         echo "Usage: jd [directory]";
@@ -27,3 +33,24 @@ jd(){
     fi
 }
 
+
+# print random mottos
+GG(){
+    m1="When in doubt, use brute force. -- Ken Thompson"
+    m2="Deleted code is debugged code.  -- Ken Thompson"
+    m3="You can’t trust code that you did not totally create yourself. -- Ken Thompson"
+    m4="Controlling complexity is the essence of computer programming. -- Brian Kernighan"
+    m5="Life is too short to run proprietary software. -- Bdale Garbee"
+    m6="Simplicity is prerequisite for reliability.  -- Edsger W. Dijkstra"
+    m7="If you think your users are idiots, only idiots will use it. -- Linus"
+    m8="First, solve the problem. Then, write the code. -- John Johnson"
+    m9="Things which any idiot could write usually have the quality of having been written by an idiot.  -- Bram Cohen"
+    m10="The trick is to fix the problem you have, rather than the problem you want. -- Bram Cohen"
+    m11="When in doubt, leave it out.  -- Joshua BLoch"
+    m12="software sucks because users demand it to. -- Nathan Myhrvold"
+
+    mottos=($m1 $m2 $m3 $m4 $m5 $m6 $m7 $m8 $m9 $m10 $m11 $m12)
+    size=$((${#mottos[*]} - 1))
+    index=$(($RANDOM % $size + 1))
+    echo ${mottos[$index]}
+}
