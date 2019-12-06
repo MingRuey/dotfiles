@@ -48,8 +48,10 @@ GG(){
     m10="The trick is to fix the problem you have, rather than the problem you want. -- Bram Cohen"
     m11="When in doubt, leave it out.  -- Joshua BLoch"
     m12="software sucks because users demand it to. -- Nathan Myhrvold"
+    m13="To me, legacy code is simply code without tests. ― Michael C. Feathers"
+    m14="Code without tests is bad code. It doesn't matter how well written it is; it doesn't matter how pretty or object-oriented or well-encapsulated it is. -- Michael C. Feathers"
 
-    mottos=($m1 $m2 $m3 $m4 $m5 $m6 $m7 $m8 $m9 $m10 $m11 $m12)
+    mottos=($m1 $m2 $m3 $m4 $m5 $m6 $m7 $m8 $m9 $m10 $m11 $m12 $m13 $m14)
     size=$((${#mottos[*]} - 1))
     index=$(($RANDOM % $size + 1))
     echo ${mottos[$index]}
