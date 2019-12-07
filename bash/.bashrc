@@ -129,3 +129,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Not to be distubed by Ctrl-S Ctrl-Q in terminals:
+stty -ixon

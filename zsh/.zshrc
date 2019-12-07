@@ -121,3 +121,5 @@ else
     . ~/.ubuntu.zsh
 fi
 
+# Not to be disturbed by Ctrl-S Ctrl-Q in terminals:
+stty -ixon
