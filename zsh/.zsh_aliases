@@ -3,7 +3,7 @@
 alias python="python3"
 alias code="code-insiders"
 alias lineclip="tr -d '\n' | xclip -selection c"
-alias lineclipwsl="tr -d '\n' | xargs wslpath -w  | xclip -selection c"
+alias lineclipwsl="xargs wslpath -w | tr -d '\n' | xclip -selection c"
 
 # jump up to the directory with given name
 # if the folder with name not found, stay at pwd
