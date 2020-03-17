@@ -4,7 +4,7 @@
 aptgetPKGS="zsh zsh-doc autojump"
 
 echo "Check if $aptgetPKGS installed:"
-sudo apt-get install $aptgetPKGS
+sudo apt-get install -y $aptgetPKGS
 
 echo -n "Install oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
