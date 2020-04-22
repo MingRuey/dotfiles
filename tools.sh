@@ -28,3 +28,15 @@ ChangeGitURL(){
     git remote set-url origin $new_url
     echo "Set git remote origin to $new_url"
 }
+
+
+FindContainer(){
+    image="leetcode:ver0"
+    running=$(docker ps -a -q --filter ancestor=$image)
+    if [[ -z "${running// }" ]]
+    then
+        echo "Container of $image not found."
+    else
+        echo "Container of $image found(ID: $running)"
+    fi
+}
