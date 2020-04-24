@@ -1,7 +1,6 @@
 # Set up for Zsh aliases
 
 alias python="python3"
-alias code="code-insiders"
 alias lineclip="tr -d '\n' | xclip -selection c"
 alias lineclipwsl="xargs wslpath -w | tr -d '\n' | xclip -selection c"
 
