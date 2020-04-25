@@ -1,0 +1,10 @@
+pytest
+rope
+pycodestyle
+scipy
+scikit-image
+opencv-python
+pandas
+tensorflow==2.1.0
+torch
+torchvision
