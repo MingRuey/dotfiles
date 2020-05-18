@@ -6,13 +6,13 @@ ChangeGitURL(){
     if [ -z $1 ]
     then
         echo "Old IP address must not empty"
-        exit 1
+        return 1
     fi
 
     if [ -z $2 ]
     then 
         echo "New IP address must not empty"
-        exit 1
+        return 1
     fi
 
     old=$1
@@ -39,4 +39,15 @@ FindContainer(){
     else
         echo "Container of $image found(ID: $running)"
     fi
+}
+
+
+mvdownloaded () {
+    usage="mvdownloaded last-n-files [dst]"
+    if [[ -z $1 ]] ; then echo $usage ; return 1 ; fi
+    if [[ -z $2 ]] ; then dst="." ; else dst=$2 ; fi
+    ls -t $_downloads | head -$1 | while read f
+    do
+        mv "$_downloads/""$f" "$dst"
+    done
 }
