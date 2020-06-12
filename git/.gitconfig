@@ -8,3 +8,5 @@
 	editor = vim
 [gui]
 	encoding = utf-8
+[alias]
+	dog = log --all --decorate --oneline --graph
