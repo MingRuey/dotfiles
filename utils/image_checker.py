@@ -242,6 +242,7 @@ if __name__ == "__main__":
 
         progress.advanced(1)
         index += 1
+    print("\n")
 
     if failed:
         for fail in failed:
