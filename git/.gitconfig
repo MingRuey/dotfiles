@@ -9,4 +9,4 @@
 [gui]
 	encoding = utf-8
 [alias]
-	dog = log --all --decorate --oneline --graph
+	dog = log --all --pretty=format:\"%Cgreen%d %Cblue%h %Creset%<(50,trunc)%s [%an %ad]\" --graph --date=format:\"%m-%d %H\"
