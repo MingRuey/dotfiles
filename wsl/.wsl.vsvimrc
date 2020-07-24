@@ -1,0 +1,42 @@
+" vssurround consistent with VsCode-Vim settings
+
+" Surround simulating bindings
+nnoremap ysiw) ciw(<C-r>")<Esc>
+nnoremap ysiw] ciw[<C-r>"]<Esc>
+nnoremap ysiw} ciw{<C-r>"}<Esc>
+nnoremap ysiw> ciw<lt><C-r>"><Esc>
+nnoremap ysiw" ciw"<C-r>""<Esc>
+nnoremap ysiw' ciw'<C-r>"'<Esc>
+
+nnoremap ysiW) ciW(<C-r>")<Esc>
+nnoremap ysiW] ciW[<C-r>"]<Esc>
+nnoremap ysiW} ciW{<C-r>"}<Esc>
+nnoremap ysiW> ciW<lt><C-r>"><Esc>
+nnoremap ysiW" ciW"<C-r>""<Esc>
+nnoremap ysiW' ciW'<C-r>"'<Esc>
+
+nnoremap ys$) c$(<C-r>")<Esc>
+nnoremap ys$] c$[<C-r>"]<Esc>
+nnoremap ys$} c${<C-r>"}<Esc>
+nnoremap ys$> c$<<C-r>"><Esc>
+nnoremap ys$" c$"<C-r>""<Esc>
+nnoremap ys$' c$'<C-r>"'<Esc>
+nnoremap yst;) ct;(<C-r>")<Esc>
+nnoremap yst;] ct;[<C-r>"]<Esc>
+nnoremap yst;} ct;{<C-r>"}<Esc>
+nnoremap yst;> ct;<<C-r>"><Esc>
+nnoremap yst;" ct;"<C-r>""<Esc>
+nnoremap yst;' ct;'<C-r>"'<Esc>
+
+" Surround delete bindings
+nnoremap ds) vi(dvhp
+nnoremap ds] vi[dvhp
+nnoremap ds} vi{dvhp
+nnoremap ds> vi<dvhp
+nnoremap ds" vi"dvhp
+nnoremap ds' vi'dvhp
+
+" Surround change bindings
+nnoremap cs"' vi"oh<Esc>msvi"l<Esc>cl'<Esc>`scl'<Esc>
+nnoremap cs'" vi'oh<Esc>msvi'l<Esc>cl"<Esc>`scl"<Esc>
+
