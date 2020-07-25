@@ -40,3 +40,20 @@ nnoremap ds' vi'dvhp
 nnoremap cs"' vi"oh<Esc>msvi"l<Esc>cl'<Esc>`scl'<Esc>
 nnoremap cs'" vi'oh<Esc>msvi'l<Esc>cl"<Esc>`scl"<Esc>
 
+" Custom bind to Visual Studio built-in command
+nnoremap zr :vsc Edit.CollapsetoDefinitions<CR>
+nnoremap zff1 :vsc View.FindResultsWindow1<CR>
+nnoremap zff2 :vsc View.FindResultsWindow2<CR>
+nnoremap zff3 :vsc View.FindResultsWindow3<CR>
+nnoremap zff4 :vsc View.FindResultsWindow4<CR>
+nnoremap zff5 :vsc View.FindResultsWindow5<CR>
+nnoremap zfr1 :vsc View.FindReferencesWindow1<CR>
+nnoremap zfr2 :vsc View.FindReferencesWindow2<CR>
+nnoremap zfr3 :vsc View.FindReferencesWindow3<CR>
+nnoremap zfr4 :vsc View.FindReferencesWindow4<CR>
+nnoremap zfr5 :vsc View.FindReferencesWindow5<CR>
+nnoremap zgg :vsc Edit.GoToAll<CR>
+nnoremap zgs :vsc Edit.GoToSymbol<CR>
+nnoremap zgf :vsc Edit.GoToFile<CR>
+nnoremap zgm :vsc Edit.GoToMember<CR>
+nnoremap zgt :vsc Edit.GoToType<CR>
