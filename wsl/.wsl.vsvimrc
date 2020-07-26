@@ -59,3 +59,4 @@ nnoremap zgf :vsc Edit.GoToFile<CR>
 nnoremap zgm :vsc Edit.GoToMember<CR>
 nnoremap zgt :vsc Edit.GoToType<CR>
 nnoremap gc :vsc Edit.ToggleComment<CR>
+vnoremap gc :vsc Edit.ToggleComment<CR>
