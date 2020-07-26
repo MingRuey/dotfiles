@@ -41,7 +41,8 @@ nnoremap cs"' vi"oh<Esc>msvi"l<Esc>cl'<Esc>`scl'<Esc>
 nnoremap cs'" vi'oh<Esc>msvi'l<Esc>cl"<Esc>`scl"<Esc>
 
 " Custom bind to Visual Studio built-in command
-nnoremap zr :vsc Edit.CollapsetoDefinitions<CR>
+nnoremap z1 :vsc Edit.CollapseAllOutlining<CR>
+nnoremap z2 :vsc Edit.CollapsetoDefinitions<CR>
 nnoremap zff1 :vsc View.FindResultsWindow1<CR>
 nnoremap zff2 :vsc View.FindResultsWindow2<CR>
 nnoremap zff3 :vsc View.FindResultsWindow3<CR>
@@ -57,3 +58,4 @@ nnoremap zgs :vsc Edit.GoToSymbol<CR>
 nnoremap zgf :vsc Edit.GoToFile<CR>
 nnoremap zgm :vsc Edit.GoToMember<CR>
 nnoremap zgt :vsc Edit.GoToType<CR>
+nnoremap gc :vsc Edit.ToggleComment<CR>
