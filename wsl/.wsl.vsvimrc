@@ -1,5 +1,8 @@
 " vssurround consistent with VsCode-Vim settings
 
+" Workaround for bug, check out: https://github.com/VsVim/VsVim/issues/1532
+set backspace=start
+
 " Surround simulating bindings
 nnoremap ysiw) ciw(<C-r>")<Esc>
 nnoremap ysiw] ciw[<C-r>"]<Esc>
