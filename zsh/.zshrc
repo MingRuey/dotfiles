@@ -109,7 +109,14 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
-# Local Settings
+# Load Colors
+if [[ -f ~/.dircolors ]]; then
+    eval $(dircolors -b ~/.dircolors)
+elif [[ -f /etc/DIR_COLORS ]]; then
+    eval $(dircolors -b /etc/DIR_COLORS)
+fi
+
+# Local Specific Settings
 if [ -f ~/.zsh.local ]; then
     . ~/.zsh.local
 fi

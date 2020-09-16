@@ -32,11 +32,13 @@ BASHDIR="/bash/"
 TMUXDIR="/tmux/"
 ZSHDIR="/zsh/"
 GITDIR='/git/'
+COLORDIR="/color/"
 
 link_all "$BASE$BASHDIR"
 link_all "$BASE$TMUXDIR"
 link_all "$BASE$ZSHDIR"
 link_all "$BASE$GITDIR"
+link_all "$BASE$COLORDIR"
 
 if grep -q "Microsoft" /proc/version; then
     SYSDIR="/wsl/"
