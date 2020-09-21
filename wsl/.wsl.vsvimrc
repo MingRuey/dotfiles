@@ -68,3 +68,5 @@ nnoremap <tab> >>
 nnoremap <S-tab> <<
 inoremap <tab> <C-t>
 inoremap <S-tab> <C-d>
+vnoremap <tab> >
+vnoremap <S-tab> <
