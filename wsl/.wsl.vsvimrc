@@ -64,3 +64,7 @@ nnoremap zgm :vsc Edit.GoToMember<CR>
 nnoremap zgt :vsc Edit.GoToType<CR>
 nnoremap gc :vsc Edit.ToggleComment<CR>
 vnoremap gc :vsc Edit.ToggleComment<CR>
+nnoremap <tab> >>
+nnoremap <S-tab> <<
+inoremap <tab> <C-t>
+inoremap <S-tab> <C-d>
