@@ -34,11 +34,9 @@ ZSHDIR="/zsh/"
 GITDIR='/git/'
 COLORDIR="/color/"
 
-link_all "$BASE$BASHDIR"
-link_all "$BASE$TMUXDIR"
-link_all "$BASE$ZSHDIR"
-link_all "$BASE$GITDIR"
-link_all "$BASE$COLORDIR"
+for directory in $BASHDIR $TMUXDIR $ZSHDIR $GITDIR $COLORDIR; do
+    link_all "$BASE$directory"
+done
 
 if grep -q "Microsoft" /proc/version; then
     SYSDIR="/wsl/"
