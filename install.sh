@@ -9,9 +9,9 @@ sudo apt-get install -y $aptgetPKGS
 echo -n "Install oh-my-zsh"
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-exec_all()
+exec_instal_scripts()
 {
-    for file in $(find "$1" -name "*.sh");
+    for file in $(find "$1" -name "install*.sh");
     do
 	echo "-- Bash ${file}"
 	bash $file | sed 's/^/    /'
@@ -44,4 +44,4 @@ else
     SYSDIR="/ubuntu/"
 fi
 
-exec_all "$BASE$SYSDIR"
+exec_instal_scripts "$BASE$SYSDIR"
