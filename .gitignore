@@ -3,6 +3,7 @@ test.sh
 
 # Ignore local setting
 *.local
+*.apps
 
 # Ignore system temperory files
 *.swp
