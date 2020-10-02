@@ -1,14 +1,22 @@
 [user]
 	name = mrchou
 	email = imchou239@gmail.com
+
 [merge]
 	tool = vimdiff
+
 [core]
 	autocrlf = false
 	editor = vim
+
 [gui]
 	encoding = utf-8
+
 [alias]
 	dog = log --all --pretty=format:\"%Cgreen%d %Cblue%h %Creset%<(50,trunc)%s [%an %ad]\" --graph --date=format:\"%m-%d %H\"
+
 [push]
 	default = simple
+
+[init]
+    templatedir = "~/.git-template"

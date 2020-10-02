@@ -9,7 +9,7 @@ sudo apt-get install -y $aptgetPKGS
 echo -n "Install oh-my-zsh"
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-exec_instal_scripts()
+exec_install_scripts()
 {
     for file in $(find "$1" -name "install*.sh");
     do
@@ -38,10 +38,13 @@ for directory in $BASHDIR $TMUXDIR $ZSHDIR $GITDIR $COLORDIR; do
     link_all "$BASE$directory"
 done
 
+# Detect System Type (ubuntu or wsl) and execute install scripts
 if grep -q "Microsoft" /proc/version; then
     SYSDIR="/wsl/"
 else
     SYSDIR="/ubuntu/"
 fi
 
-exec_instal_scripts "$BASE$SYSDIR"
+for directory in $GITDIR $SYSDIR; do
+    exec_install_scripts "$BASE$directory"
+done
