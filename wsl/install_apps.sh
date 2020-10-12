@@ -20,17 +20,14 @@ configure_app_shortcut() {
     echo "The .exe path of the app '$1':"
     read exe
 
-    func1="$1 () {"
-    func2="    exe=\"$exe\""
-    func3="    if [[ -z \$1 ]]; then"
-    func4="        eval \$exe"
-    func5="    else"
-    func6="        eval \$exe \"\$(wslpath -m \$1)\""
-    func7="    fi"
-    func8="}"
-    for line in "$func1" "$func2" "$func3" "$func4" "$func5" "$func6" "$func7" "$func8"; do
-        echo $line >> $2
-    done
+    echo "$1 () {" >> $2
+    echo "    exe=\"$exe\"" >> $2
+    echo "    if [[ -z \$1 ]]; then" >> $2
+    echo "        eval \$exe" >> $2
+    echo "    else" >> $2
+    echo "        eval \$exe \"\$1\"" >> $2
+    echo "    fi" >> $2
+    echo "}" >> $2
     echo "" >> $2
 }
 
