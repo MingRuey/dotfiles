@@ -33,6 +33,14 @@ jd(){
     fi
 }
 
+# count number of file under folder
+countf(){
+    if [[ -z "$1" ]]; then
+        find . -type f | wc -l
+    else
+        find $1 -type f | wc -l
+    fi
+}
 
 # print random mottos
 GG(){
