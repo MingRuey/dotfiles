@@ -16,12 +16,12 @@ MMH3HASH = mmh3.hash128
 
 
 class RegisterCode(enum.Enum):
-    READ_FAIL = "unable to read the image"
-    DECODE_FAIL = "unable to decode the image"
-    DUPLICATE = "both id and content already in container"
-    ID_CONFLICT = "id conflict"
-    CONTENT_CONFLICT = "content conflict"
-    SUCCESS = "success"
+    READ_FAIL = "Read"
+    DECODE_FAIL = "Decode"
+    DUPLICATE = "Duplicate"
+    ID_CONFLICT = "ID"
+    CONTENT_CONFLICT = "Content"
+    SUCCESS = "OK"
 
 
 class RegisterResult(namedtuple("RegisterResult", ["code", "info"])):
@@ -216,17 +216,21 @@ if __name__ == "__main__":
         help="to check only image content",
         action="store_true"
     )
+    parser.add_argument(
+        "--detailed",
+        help="display full error message instead of short code",
+        action="store_true"
+    )
     args = parser.parse_args()
 
     # check only repeated, ignore filename
-    print("-- Globbing images --")
     files = list(rglob_imgs(args.directories))
     if not files:
-        print("Image check failed. No image found under:")
+        print("---0 image.")
         for img in args.directories:
             print(img)
         sys.exit(1)
-    print("-- Globbing finished. {} images found --".format(len(files)))
+    print("---{} image(s).".format(len(files)))
 
     container = ImageContainer()
     progress = ProgressBar(total=len(files))
@@ -237,8 +241,14 @@ if __name__ == "__main__":
         image_path = str(img)
         result = container.register_image(img_id, image_path)
         if result.code != RegisterCode.SUCCESS:
-            msg = "Image check failed: {} for file {}"
-            failed.append(msg.format(result.info, image_path))
+            if args.detailed:
+                msg = "Image check failed: {} for file {}" 
+                msg = msg.format(result.info, image_path)
+                failed.append(msg.format(result.info, image_path))
+            else:
+                msg = "{} {}" 
+                msg = msg.format(result.code.value, image_path)
+                failed.append(msg.format(result.info, image_path))
 
         progress.advanced(1)
         index += 1
@@ -249,4 +259,4 @@ if __name__ == "__main__":
             print(fail)
         sys.exit(1)
     else:
-        print("{} image(s) successfully registered.".format(len(files)))
+        print("---{} image(s) successfully registered.".format(len(files)))
