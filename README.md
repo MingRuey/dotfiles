@@ -7,9 +7,11 @@ dotfile management including zsh(mostly used)/bash shell, and wsl environment.
 ---
 
 #### Install
+```bash
 git clone https://github.com/MingRuey/dotfiles.git
 cd dotfiles
 bash ./install.sh  (or chmod +x ./install.sh && ./install.sh)
+```
 
 #### Project Structure
 Each folder represents a collection of settings
