@@ -56,6 +56,7 @@ set_editor() {
 prompt_help() {
   echo -e "${RED}$(cat <<-EOF
 e - edit commit message
+i - ignore possible misspelled
 n - abort commit
 ? - print help
 EOF
@@ -153,10 +154,12 @@ validate_commit_message() {
   if [ $? -ne 0 ]; then
       echo "Aspell not installed - unable to check spelling"
   else
-      LINE_NUMBER=1
-      MISSPELLED_WORDS=`echo "$COMMIT_MSG_LINES[LINE_NUMBER]" | $ASPELL --lang=en --list`
-      if [ -n "$MISSPELLED_WORDS" ]; then
-        add_warning LINE_NUMBER "Possible misspelled word(s): $MISSPELLED_WORDS"
+      if [ -z $1 ]; then
+          LINE_NUMBER=1
+          MISSPELLED_WORDS=`echo "$COMMIT_MSG_LINES[LINE_NUMBER]" | $ASPELL --lang=en --list`
+          if [ -n "$MISSPELLED_WORDS" ]; then
+            add_warning LINE_NUMBER "Possible misspelled word(s): $MISSPELLED_WORDS"
+          fi
       fi
   fi
 
@@ -287,11 +290,12 @@ else
   TTY=/dev/tty
 fi
 
+IGNORE=
 while true; do
 
   read_commit_message
 
-  validate_commit_message
+  validate_commit_message $IGNORE
 
   # if there are no WARNINGS are empty then we're good to break out of here
   test ${#WARNINGS[@]} -eq 0 && exit 0;
@@ -299,7 +303,7 @@ while true; do
   display_warnings
 
   # Ask the question (not using "read -p" as it uses stderr not stdout)
-  echo -en "${CYAN}Proceed with commit? [e/n/?] ${NC}"
+  echo -en "${CYAN}Proceed with commit? [e/i/n/?] ${NC}"
 
   # Read the answer
   read REPLY < "$TTY"
@@ -307,6 +311,7 @@ while true; do
   # Check if the reply is valid
   case "$REPLY" in
     E*|e*) $HOOK_EDITOR "$COMMIT_MSG_FILE" < $TTY; continue ;;
+    I*|i*) IGNORE=1; continue ;;
     N*|n*) exit 1 ;;
     *)     SKIP_DISPLAY_WARNINGS=1; prompt_help; continue ;;
   esac
