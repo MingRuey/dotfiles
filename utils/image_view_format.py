@@ -17,6 +17,9 @@ def glob_imgs(dirs: List[Path], recursive=False) -> Path:
         
         target = target.rglob("*.*") if recursive else target.glob("*.*")
         for file in target:
+            if not file.is_file():
+                continue
+
             imgfmt = imghdr.what(str(file))
             if imgfmt is not None:
                 yield file, imgfmt
@@ -38,7 +41,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "-r", "--recursive",
+        "-r", "--recursive", action="store_true",
         help="To do the check recursively"
     )   
     parser.add_argument(

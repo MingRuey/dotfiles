@@ -178,6 +178,8 @@ def rglob_imgs(dirs: List[Path]) -> Path:
             print("Warning: {} is not valid dir".format(directory))
             continue
         for file in target.rglob("*.*"):
+            if not file.is_file():
+                continue
             if imghdr.what(str(file)) is not None:
                 yield file
 
@@ -227,8 +229,6 @@ if __name__ == "__main__":
     files = list(rglob_imgs(args.directories))
     if not files:
         print("---0 image.")
-        for img in args.directories:
-            print(img)
         sys.exit(1)
     print("---{} image(s).".format(len(files)))
 
