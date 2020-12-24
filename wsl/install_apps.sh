@@ -96,4 +96,5 @@ fi
 echo "#!/bin/bash" >> $OUTF
 interactive_install_collection_shortcut Chrome chrome
 interactive_install_collection_shortcut Office winword winppt winexcel
+interactive_install_collection_shortcut IrfanView irfan
 interactive_configure_imagej
