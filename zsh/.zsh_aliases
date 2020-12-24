@@ -42,6 +42,17 @@ countf(){
     fi
 }
 
+# batch rename files (unlike built-in 'rename', it supports chinese characters)
+rename_chinese(){
+    if [[ -z "$1" ]] || [[ -z "$2" ]]; then
+        echo "Rename file recursively, usage:"
+        echo "  rename_chinese [name] [new name]"
+        return 1
+    else
+        find . -name "$1" | while read l; do mv $l $(dirname $l)/$2; done;
+    fi
+}
+
 # print random mottos
 GG(){
     m1="When in doubt, use brute force. -- Ken Thompson"
