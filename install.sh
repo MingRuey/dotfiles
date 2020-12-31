@@ -32,9 +32,10 @@ BASHDIR="/bash/"
 TMUXDIR="/tmux/"
 ZSHDIR="/zsh/"
 GITDIR='/git/'
+VIMDIR='/vim/'
 COLORDIR="/color/"
 
-for directory in $BASHDIR $TMUXDIR $ZSHDIR $GITDIR $COLORDIR; do
+for directory in $BASHDIR $TMUXDIR $ZSHDIR $VIMDIR $GITDIR $COLORDIR; do
     link_all "$BASE$directory"
 done
 
@@ -45,6 +46,6 @@ else
     SYSDIR="/ubuntu/"
 fi
 
-for directory in $GITDIR $SYSDIR; do
+for directory in $VIMDIR $GITDIR $SYSDIR; do
     exec_install_scripts "$BASE$directory"
 done
