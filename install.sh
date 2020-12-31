@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Required packages:
-aptgetPKGS="zsh zsh-doc autojump"
+aptgetPKGS="zsh zsh-doc autojump taskwarrior"
 
 echo "Check if $aptgetPKGS installed:"
 sudo apt-get install -y $aptgetPKGS
