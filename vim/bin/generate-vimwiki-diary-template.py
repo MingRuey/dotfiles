@@ -2,14 +2,16 @@
 import sys
 import datetime
 
-template = """ > {date}
+template = """> {date}
 
 === Daily Hightlight ===
 
-    ## Day: [The Item]()
+    *Day: The Item*
+
         > Context && Justification
 
-    ## Night:: [The Item]()
+    *Night:: The Item*
+
         > Context && Justification
 
 == Reading ==
