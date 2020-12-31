@@ -2,23 +2,23 @@
 import sys
 import datetime
 
-template = """# {date}
+template = """ > {date}
 
-## Daily Hightlight 
+=== Daily Hightlight ===
 
-Day Time: The Item
-> Context && Justification
+    ## Day: [The Item]()
+        > Context && Justification
 
-Night Time: The Item
-> Context && Justification
+    ## Night:: [The Item]()
+        > Context && Justification
 
-## Reading 
+== Reading ==
     * [] Item
 
-## Todo list
+== Todo list ==
     * [] Item
 
-## Notes
+== Notes ==
 """
 
 date = (datetime.date.today() if len(sys.argv) < 2
