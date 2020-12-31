@@ -5,9 +5,9 @@ filetype plugin indent on
 syntax enable
 
 " vim color settings
+set t_Co=256
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors=256
 
 " vim wiki related settings
 set nocompatible

@@ -105,6 +105,10 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Fix color difference of vim between inside/outside tmux
+export TERM=screen-256color
+
+# load aliases
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
