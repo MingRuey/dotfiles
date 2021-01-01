@@ -15,10 +15,10 @@ template = """> {date}
         > Context && Justification
 
 == Reading ==
-    * [] Item
+    * [ ] Item
 
 == Todo list ==
-    * [] Item
+    * [ ] Item
 
 == Notes ==
 """
