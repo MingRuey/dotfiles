@@ -10,7 +10,7 @@ template = """> {date}
 
         > Context && Justification
 
-    *Night:: The Item*
+    *Night: The Item*
 
         > Context && Justification
 
