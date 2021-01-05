@@ -17,3 +17,4 @@ nnoremap <Leader>wdl vi]dviWp
 
 " edit settings
 set tabstop=4 shiftwidth=4 expandtab smarttab
+set nowrap
