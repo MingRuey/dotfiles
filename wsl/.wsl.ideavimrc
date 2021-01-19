@@ -10,11 +10,15 @@ nnoremap zi zc
 nnoremap zc zi
 nnoremap <leader>add :action AddAction<CR>
 nnoremap gp :action GotoNextError<CR>
+
+" Refactor related
 nnoremap zrr :action Refactorings.QuickListPopupAction<CR>
 nnoremap zfu :action MoveStatementUp<CR>
 nnoremap zfd :action MoveStatementDown<CR>
 nnoremap zfin :action MoveElementRight<CR>
 nnoremap zfout :action MoveElementLeft<CR>
+
+" Nagivation related
 nnoremap zgg :action ReSharperNavigateTo<CR>
 nnoremap zgr :action FindUsages<CR>
 nnoremap zgi :action GotoImplementation<CR>
@@ -22,10 +26,18 @@ nnoremap zgs :action GotoSymbol<CR>
 nnoremap zgf :action GotoFile<CR>
 nnoremap zgm :action GotoMember<CR>
 nnoremap zgt :action GotoType<CR>
+
+" Unit test related
+nnoremap ztt :action Rider.UnitTesting.QuickList<CR>
+nnoremap ztr :action Rider.UnitTesting.RunContext<CR>
+nnoremap zts :action Rider.UnitTesting.RunSolution<CR>
+
+" Debugging related
 nnoremap zbb :action ToggleBreakpoint<CR>
 nnoremap zbd :action DeleteAllBreakpoint<CR>
 nnoremap zbq :action DisableAllBreakpoints<CR>
 nnoremap zbs :action EnableAllBreakpoints<CR>
+
 nnoremap <C-,> :action RenameElement<CR>
 nnoremap <C-p> :action ShowErrorDescription<CR>
 nnoremap <tab> >>
