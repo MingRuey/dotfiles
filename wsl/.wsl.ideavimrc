@@ -1,17 +1,20 @@
-" vssurround consistent with VsCode-Vim settings
-let mapleader='\'
-
 " Workaround for bug, check out: https://github.com/VsVim/VsVim/issues/1532
-set backspace=start
 set surround
 set easymotion
 set incsearch
+set relativenumber number
 
 " Custom bind to Visual Studio built-in command
 nnoremap z1 :action RiderCollapseToDefinitions<CR>
 nnoremap zi zc
 nnoremap zc zi
-nnoremap zp :action GotoNextError<CR>
+nnoremap <leader>add :action AddAction<CR>
+nnoremap gp :action GotoNextError<CR>
+nnoremap zrr :action Refactorings.QuickListPopupAction<CR>
+nnoremap zfu :action MoveStatementUp<CR>
+nnoremap zfd :action MoveStatementDown<CR>
+nnoremap zfin :action MoveElementRight<CR>
+nnoremap zfout :action MoveElementLeft<CR>
 nnoremap zgg :action ReSharperNavigateTo<CR>
 nnoremap zgr :action FindUsages<CR>
 nnoremap zgi :action GotoImplementation<CR>
@@ -23,6 +26,8 @@ nnoremap zbb :action ToggleBreakpoint<CR>
 nnoremap zbd :action DeleteAllBreakpoint<CR>
 nnoremap zbq :action DisableAllBreakpoints<CR>
 nnoremap zbs :action EnableAllBreakpoints<CR>
+nnoremap <C-,> :action RenameElement<CR>
+nnoremap <C-p> :action ShowErrorDescription<CR>
 nnoremap <tab> >>
 nnoremap <S-tab> <<
 inoremap <tab> <C-t>
