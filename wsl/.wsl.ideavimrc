@@ -13,6 +13,7 @@ nnoremap gp :action GotoNextError<CR>
 
 " Refactor related
 nnoremap zrr :action Refactorings.QuickListPopupAction<CR>
+nnoremap zff :action ReformatCode<CR>
 nnoremap zfu :action MoveStatementUp<CR>
 nnoremap zfd :action MoveStatementDown<CR>
 nnoremap zfin :action MoveElementRight<CR>
