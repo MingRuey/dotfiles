@@ -1,12 +1,13 @@
 pytest
 rope
+flake8
 autopep8
 pycodestyle
 scipy
 scikit-image
 opencv-python
 pandas
-tensorflow==2.2.0
+tensorflow==2.4.0
 torch
 torchvision
 lightgbm --install-option=--gpu --install-option="--opencl-include-dir=/usr/local/cuda/include/" --install-option="--opencl-library=/usr/local/cuda/lib64/libOpenCL.so"
