@@ -11,6 +11,10 @@ nnoremap zi zc
 nnoremap zc zi
 nnoremap <leader>add :action AddAction<CR>
 nnoremap gp :action GotoNextError<CR>
+    " commentary currently not working for Rider
+    " ref: https://youtrack.jetbrains.com/issue/RIDER-38359
+nmap gcc :action CommentByLineComment<CR>
+vmap gc :action CommentByLineComment<CR>
 
 " Refactor related
 nnoremap zrr :action Refactorings.QuickListPopupAction<CR>
