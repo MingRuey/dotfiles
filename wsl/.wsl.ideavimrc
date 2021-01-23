@@ -1,6 +1,7 @@
 " Workaround for bug, check out: https://github.com/VsVim/VsVim/issues/1532
 set surround
 set easymotion
+set commentary
 set incsearch
 set relativenumber number
 
