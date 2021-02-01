@@ -10,6 +10,8 @@ nnoremap z1 :action RiderCollapseToDefinitions<CR>
 nnoremap zi zc
 nnoremap zc zi
 nnoremap <leader>add :action AddAction<CR>
+nnoremap zp :action ShowErrorDescription<CR>
+nnoremap zd :action QuickJavaDoc<CR>
 nnoremap gp :action GotoNextError<CR>
     " commentary currently not working for Rider
     " ref: https://youtrack.jetbrains.com/issue/RIDER-38359
@@ -18,13 +20,14 @@ vmap gc :action CommentByLineComment<CR>
 
 " Refactor related
 nnoremap zrr :action Refactorings.QuickListPopupAction<CR>
+vnoremap zrr :action Refactorings.QuickListPopupAction<CR>
 nnoremap zff :action ReformatCode<CR>
 nnoremap zfu :action MoveStatementUp<CR>
 nnoremap zfd :action MoveStatementDown<CR>
 nnoremap zfin :action MoveElementRight<CR>
 nnoremap zfout :action MoveElementLeft<CR>
 
-" Nagivation related
+" Navigation related
 nnoremap zgg :action ReSharperNavigateTo<CR>
 nnoremap zgr :action FindUsages<CR>
 nnoremap zgi :action GotoImplementation<CR>
@@ -39,13 +42,12 @@ nnoremap ztr :action Rider.UnitTesting.RunContext<CR>
 nnoremap zts :action Rider.UnitTesting.RunSolution<CR>
 
 " Debugging related
-nnoremap zbb :action ToggleBreakpoint<CR>
-nnoremap zbd :action DeleteAllBreakpoint<CR>
-nnoremap zbq :action DisableAllBreakpoints<CR>
-nnoremap zbs :action EnableAllBreakpoints<CR>
+nnoremap zbb :action BreakpointActionsGroup<CR>
+nnoremap zbd :action RiderRemoveAllLineBreakpoints<CR>
+nnoremap zbl :action ToggleLineBreakpoint<CR>
+nnoremap zbe :action ToggleBreakpointEnabled<CR>
 
 nnoremap <C-,> :action RenameElement<CR>
-nnoremap <C-p> :action ShowErrorDescription<CR>
 nnoremap <tab> >>
 nnoremap <S-tab> <<
 inoremap <tab> <C-t>
