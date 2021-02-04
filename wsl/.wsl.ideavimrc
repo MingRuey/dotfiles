@@ -5,7 +5,7 @@ set commentary
 set incsearch
 set relativenumber number
 
-" Custom bind to Visual Studio built-in command
+" Some editor binds
 nnoremap z1 :action RiderCollapseToDefinitions<CR>
 nnoremap zi zc
 nnoremap zc zi
@@ -35,6 +35,7 @@ nnoremap zgs :action GotoSymbol<CR>
 nnoremap zgf :action GotoFile<CR>
 nnoremap zgm :action GotoMember<CR>
 nnoremap zgt :action GotoType<CR>
+nnoremap zgl :action JumpToLastWindow<CR>
 
 " Unit test related
 nnoremap ztt :action Rider.UnitTesting.QuickList<CR>
