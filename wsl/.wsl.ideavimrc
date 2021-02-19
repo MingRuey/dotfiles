@@ -1,9 +1,15 @@
 " Workaround for bug, check out: https://github.com/VsVim/VsVim/issues/1532
+set NERDTree
 set surround
 set easymotion
-set commentary
 set incsearch
 set relativenumber number
+
+" commentary currently not working for Rider
+" ref: https://youtrack.jetbrains.com/issue/RIDER-38359
+" set commentary
+nmap gcc :action CommentByLineComment<CR>
+vmap gc :action CommentByLineComment<CR>
 
 " Some editor binds
 nnoremap z1 :action RiderCollapseToDefinitions<CR>
@@ -13,10 +19,6 @@ nnoremap <leader>add :action AddAction<CR>
 nnoremap zp :action ShowErrorDescription<CR>
 nnoremap zd :action QuickJavaDoc<CR>
 nnoremap gp :action GotoNextError<CR>
-    " commentary currently not working for Rider
-    " ref: https://youtrack.jetbrains.com/issue/RIDER-38359
-nmap gcc :action CommentByLineComment<CR>
-vmap gc :action CommentByLineComment<CR>
 
 " Refactor related
 nnoremap zrr :action Refactorings.QuickListPopupAction<CR>
