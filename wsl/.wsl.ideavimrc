@@ -43,6 +43,7 @@ nnoremap zgl :action JumpToLastWindow<CR>
 nnoremap ztt :action Rider.UnitTesting.QuickList<CR>
 nnoremap ztr :action Rider.UnitTesting.RunContext<CR>
 nnoremap zts :action Rider.UnitTesting.RunSolution<CR>
+nnoremap ztm :action RiderUnitTestDotMemoryUnitContextAction<CR>
 
 " Debugging related
 nnoremap zbb :action BreakpointActionsGroup<CR>
