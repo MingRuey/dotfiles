@@ -1,9 +1,12 @@
 " Workaround for bug, check out: https://github.com/VsVim/VsVim/issues/1532
-set NERDTree
+set ReplaceWithRegister
+set argtextobj
+set exchange
 set surround
 set easymotion
-set incsearch
 set relativenumber number
+set incsearch
+set NERDTree
 
 " commentary currently not working for Rider
 " ref: https://youtrack.jetbrains.com/issue/RIDER-38359
