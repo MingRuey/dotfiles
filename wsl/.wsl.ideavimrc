@@ -1,6 +1,7 @@
 " Workaround for bug, check out: https://github.com/VsVim/VsVim/issues/1532
 set ReplaceWithRegister
 set argtextobj
+let g:argtextobj_pairs="(:),{:},<:>"
 set exchange
 set surround
 set easymotion
