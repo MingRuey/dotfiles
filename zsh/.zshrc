@@ -134,3 +134,6 @@ fi
 
 # Not to be disturbed by Ctrl-S Ctrl-Q in terminals:
 stty -ixon
+
+# fuzzy completion tool fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

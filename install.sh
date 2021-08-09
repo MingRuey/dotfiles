@@ -46,6 +46,6 @@ else
     SYSDIR="/ubuntu/"
 fi
 
-for directory in $VIMDIR $GITDIR $SYSDIR; do
+for directory in $ZSHDIR $VIMDIR $GITDIR $SYSDIR; do
     exec_install_scripts "$BASE$directory"
 done

@@ -9,7 +9,7 @@ pclip()
         return
     fi
     fullp=$(realpath $1 | tr -d '\n') 
-    echo $fullp | xclip -selection c
+    echo -n $fullp | xclip -selection c
     echo "clip path: $fullp"
 }
 
@@ -21,7 +21,7 @@ pwsl()
         return
     fi
     fullp=$(realpath $1 | xargs wslpath -w | tf -d '\n') 
-    echo $fullp | xclip -selection c
+    echo -n $fullp | xclip -selection c
     echo "clip path: $fullp"
 }
 

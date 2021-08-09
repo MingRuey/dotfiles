@@ -132,3 +132,6 @@ fi
 
 # Not to be distubed by Ctrl-S Ctrl-Q in terminals:
 stty -ixon
+
+# fuzzy completion tool fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
