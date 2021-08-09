@@ -1,8 +1,29 @@
 # Set up for Zsh aliases
 
 alias python="python3"
-alias pclip="tr -d '\n' | xclip -selection c"
-alias pwsl="xargs wslpath -w | tr -d '\n' | xclip -selection c"
+pclip()
+{
+    if [ -z "$1" ]; then
+        echo "Fast paste full path into system clipboard"
+        echo "Usage: pclip [directory/file]"
+        return
+    fi
+    fullp=$(realpath $1 | tr -d '\n') 
+    echo $fullp | xclip -selection c
+    echo "clip path: $fullp"
+}
+
+pwsl()
+{
+    if [ -z "$1" ]; then
+        echo "Fast paste full path into system clipboard"
+        echo "Usage: pwsl [directory/file]"
+        return
+    fi
+    fullp=$(realpath $1 | xargs wslpath -w | tf -d '\n') 
+    echo $fullp | xclip -selection c
+    echo "clip path: $fullp"
+}
 
 # jump up to the directory with given name
 # if the folder with name not found, stay at pwd
