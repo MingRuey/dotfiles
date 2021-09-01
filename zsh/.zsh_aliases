@@ -80,15 +80,17 @@ ARGS() {
     !^      first argument\n\
     !$      last argument\n\
     !*      all arguments\n\
-    !:2     second argument\n\
-\n
-    !:2-3   second to third arguments\n\
-    !:2-$   second to last arguments\n\
-    !:2*    second to last arguments\n\
-    !:2-    second to next to last arguments\n\
-\n
-    !:0     the command\n\
-    !!      repeat the previous line"
+\n\
+    !-n     n-th command before the current\n\
+    !-n:m   m-th argument of n-th command before the current\n\
+    !!      repeat the previous line (is same as !-1)\n\
+\n\
+    !:2     2nd argument of last command\n\
+    !:2-3   2nd to third arguments of last command\n\
+    !:2-$   2nd to last arguments of last command\n\
+    !:2*    2nd to last arguments of last command\n\
+    !:2-    2nd to next to last arguments of last command\n\
+    !-2:2   2nd argument of 2nd last command"
 }
 
 
