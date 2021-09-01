@@ -74,7 +74,25 @@ rename_chinese(){
     fi
 }
 
-# print random mottos
+# display argument helps
+ARGS() {
+    echo "
+    !^      first argument\n\
+    !$      last argument\n\
+    !*      all arguments\n\
+    !:2     second argument\n\
+\n
+    !:2-3   second to third arguments\n\
+    !:2-$   second to last arguments\n\
+    !:2*    second to last arguments\n\
+    !:2-    second to next to last arguments\n\
+\n
+    !:0     the command\n\
+    !!      repeat the previous line"
+}
+
+
+# display random mottos
 GG(){
     m1="When in doubt, use brute force. -- Ken Thompson"
     m2="Deleted code is debugged code.  -- Ken Thompson"
