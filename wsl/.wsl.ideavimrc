@@ -42,6 +42,7 @@ nnoremap zgf :action GotoFile<CR>
 nnoremap zgm :action GotoMember<CR>
 nnoremap zgt :action GotoType<CR>
 nnoremap zgl :action JumpToLastWindow<CR>
+nnoremap zgd :action GotoDeclaration<CR>
 
 " Unit test related
 nnoremap ztt :action Rider.UnitTesting.QuickList<CR>
