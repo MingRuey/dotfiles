@@ -113,7 +113,7 @@ if [ -f ~/.bash.local ]; then
 fi
 
 # Load system setting based on environment
-if grep -q "Microsoft" /proc/version; then
+if grep -Eq "Microsoft|microsoft" /proc/version ; then
     . ~/.wsl.bash
 else
     . ~/.ubuntu.bash

@@ -126,7 +126,7 @@ if [ -f ~/.zsh.local ]; then
 fi
 
 # Load system setting based on environment
-if grep -q "Microsoft" /proc/version; then
+if grep -Eq "Microsoft|microsoft" /proc/version; then
     . ~/.wsl.zsh
 else
     . ~/.ubuntu.zsh
