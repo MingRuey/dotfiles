@@ -66,7 +66,7 @@ countf(){
 # batch rename files (unlike built-in 'rename', it supports chinese characters)
 rename_chinese(){
     if [[ -z "$1" ]] || [[ -z "$2" ]]; then
-        echo "Rename file recursively, usage:"
+        echo "rename_chinese: Rename file recursively, usage:"
         echo "  rename_chinese [name] [new name]"
         return 1
     else
@@ -75,7 +75,7 @@ rename_chinese(){
 }
 
 # display argument helps
-ARGS() {
+args() {
     echo "
     !^      first argument\n\
     !$      last argument\n\
@@ -93,6 +93,21 @@ ARGS() {
     !-2:2   2nd argument of 2nd last command"
 }
 
+ssh-add-if-not-exist() {
+    if [[ -z "$1" ]]; then
+        echo "ssh-add-if-not-exist: Add a ssh key if it does not list in ssh-agnet"
+        echo "Usage: ssh-add-if-not-exist path-to-private-key"
+    fi
+
+    _check_agent () {
+        ssh-add -l &>/dev/null
+        if [[ $? -ne 0 ]]; then eval $(ssh-agent) && echo "Add new ssh-agent"; fi
+    }
+    _check_agent
+    unset -f _check_agent
+
+    ssh-add -l | grep -q "$(ssh-keygen -lf $1  | awk '{print $2}')" || ssh-add $1
+}
 
 # display random mottos
 GG(){
