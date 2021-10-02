@@ -56,6 +56,9 @@ nnoremap zbd :action RiderRemoveAllLineBreakpoints<CR>
 nnoremap zbl :action ToggleLineBreakpoint<CR>
 nnoremap zbe :action ToggleBreakpointEnabled<CR>
 
+" remap paste in inset mode
+inoremap <C-v> <esc>:action $Paste<CR>
+
 nnoremap <C-,> :action RenameElement<CR>
 nnoremap <tab> >>
 nnoremap <S-tab> <<
