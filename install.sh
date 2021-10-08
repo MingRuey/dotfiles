@@ -40,7 +40,7 @@ for directory in $BASHDIR $TMUXDIR $ZSHDIR $VIMDIR $GITDIR $COLORDIR; do
 done
 
 # Detect System Type (ubuntu or wsl) and execute install scripts
-if grep -q "Microsoft" /proc/version; then
+if grep -q "[Mm]icrosoft" /proc/version; then
     SYSDIR="/wsl/"
 else
     SYSDIR="/ubuntu/"
