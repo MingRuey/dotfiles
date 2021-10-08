@@ -25,7 +25,7 @@ configure_app_shortcut() {
     echo "    if [[ -z \$1 ]]; then" >> $2
     echo "        eval \$exe" >> $2
     echo "    else" >> $2
-    echo "        eval \$exe \"\$1\"" >> $2
+    echo "        eval \$exe '\$(wslpath -w \$1)'" >> $2
     echo "    fi" >> $2
     echo "}" >> $2
     echo "" >> $2
