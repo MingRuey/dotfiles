@@ -21,7 +21,7 @@ configure_app_shortcut() {
     read exe
 
     echo "$1 () {" >> $2
-    echo "    exe=\"$exe\"" >> $2
+    echo "    exe=\$(printf '%q' \"$exe\")" >> $2
     echo "    if [[ -z \$1 ]]; then" >> $2
     echo "        eval \$exe" >> $2
     echo "    else" >> $2
@@ -95,6 +95,7 @@ fi
 
 echo "#!/bin/bash" >> $OUTF
 interactive_install_collection_shortcut Chrome chrome
+interactive_install_collection_shortcut Edge edge
 interactive_install_collection_shortcut Office winword winppt winexcel
 interactive_install_collection_shortcut IrfanView irfan
 interactive_configure_imagej
