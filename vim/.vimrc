@@ -18,6 +18,7 @@ nnoremap <Leader>wdl vi]dviWp
 " edit settings
 set tabstop=4 shiftwidth=4 expandtab smarttab
 set nowrap
+set pastetoggle=<F2>
 
 " plugin related
 let g:camelcasemotion_key = '<leader>'
