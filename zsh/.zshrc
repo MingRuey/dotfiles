@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bira"
+ZSH_THEME="bira-modified"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -67,10 +67,19 @@ if [ -f /usr/share/autojump/autojump.sh ]; then
     . /usr/share/autojump/autojump.sh
 fi
 
+source $ZSH/oh-my-zsh.sh
+
 # Advanced Tab completion
 autoload -U compinit
 compinit
+<<<<<<< HEAD
 source $ZSH/oh-my-zsh.sh
+=======
+export CLICOLOR=1
+export LS_COLORS='no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
+alias ls="gls --color"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+>>>>>>> 3256399 (Draft change for Macbook -- Fix terminal color)
 
 # Tab completion color
 export CLICOLOR=1
@@ -124,24 +133,13 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
-# Load Colors
-if [[ -f ~/.dircolors ]]; then
-    eval $(dircolors -b ~/.dircolors)
-elif [[ -f /etc/DIR_COLORS ]]; then
-    eval $(dircolors -b /etc/DIR_COLORS)
-fi
-
 # Local Specific Settings
 if [ -f ~/.zsh.local ]; then
     . ~/.zsh.local
 fi
 
 # Load system setting based on environment
-if grep -Eq "Microsoft|microsoft" /proc/version; then
-    . ~/.wsl.zsh
-else
-    . ~/.ubuntu.zsh
-fi
+. ~/.ubuntu.zsh
 
 # Not to be disturbed by Ctrl-S Ctrl-Q in terminals:
 stty -ixon

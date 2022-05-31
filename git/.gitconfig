@@ -1,6 +1,6 @@
 [user]
-	name = mrchou
-	email = imchou239@gmail.com
+	name = axelraychou
+	email = chou@axelspace.com
 
 [merge]
 	tool = vimdiff
@@ -46,3 +46,8 @@
 
 [diff]
 	tool = vimdiff
+    
+[color "status"]
+    changed = yellow
+    added = green
+    untracked = red
