@@ -2,19 +2,19 @@
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+export PATH=/opt/homebrew/bin:$PATH
+
+# For some GNU compatibilities
+brew install coreutils
 
 # Install oh-my-zsh, autojump, xcilp
 echo -n "Install oh-my-zsh"
 yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-export PATH=/opt/homebrew/bin:$PATH
 brew install coreutils
 brew install autojump
 brew install xclip
 brew install task
-
-# For having `dircolor` command
-brew install coreutils
-
+brew install tmux
 
 exec_install_scripts()
 {
