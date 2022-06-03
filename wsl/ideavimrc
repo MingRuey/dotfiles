@@ -1,5 +1,5 @@
-" Workaround for bug, check out: https://github.com/VsVim/VsVim/issues/1532
 set ReplaceWithRegister
+set textobj-indent
 set argtextobj
 let g:argtextobj_pairs="(:),{:},<:>"
 set exchange
@@ -8,6 +8,7 @@ set easymotion
 set relativenumber number
 set incsearch
 set NERDTree
+set nooldundo
 
 " commentary currently not working for Rider
 " ref: https://youtrack.jetbrains.com/issue/RIDER-38359
@@ -16,25 +17,22 @@ nmap gcc :action CommentByLineComment<CR>
 vmap gc :action CommentByLineComment<CR>
 
 " Some editor binds
-nnoremap z1 :action RiderCollapseToDefinitions<CR>
-nnoremap zi zc
+" 1. Structural viewing
+" 1-1. Fold/Unfold
+unmap zo
 nnoremap zc zi
-nnoremap <leader>add :action AddAction<CR>
+nnoremap zoo zo
+nnoremap zii zc
+nnoremap zia :action CollapseAllRegions<CR>
+nnoremap zir :action CollapseRegionRecursively<CR>
+nnoremap zoa :action ExpandAllRegions<CR>
+nnoremap zor :action ExpandRegionRecursively<CR>
 nnoremap zp :action ShowErrorDescription<CR>
-nnoremap zd :action QuickJavaDoc<CR>
-nnoremap gp :action GotoNextError<CR>
 
-" Refactor related
-nnoremap zrr :action Refactorings.QuickListPopupAction<CR>
-vnoremap zrr :action Refactorings.QuickListPopupAction<CR>
-nnoremap zff :action ReformatCode<CR>
-nnoremap zfu :action MoveStatementUp<CR>
-nnoremap zfd :action MoveStatementDown<CR>
-nnoremap zfin :action MoveElementRight<CR>
-nnoremap zfout :action MoveElementLeft<CR>
-
-" Navigation related
-nnoremap zgg :action ReSharperNavigateTo<CR>
+" 1-2. Navigation
+nnoremap zff :action ShowNavBar<CR>
+nnoremap zgg :action FileStructurePopup<CR>
+nnoremap zgp :action GotoNextError<CR>
 nnoremap zgr :action FindUsages<CR>
 nnoremap zgi :action GotoImplementation<CR>
 nnoremap zgs :action GotoSymbol<CR>
@@ -43,26 +41,64 @@ nnoremap zgm :action GotoMember<CR>
 nnoremap zgt :action GotoType<CR>
 nnoremap zgl :action JumpToLastWindow<CR>
 nnoremap zgd :action GotoDeclaration<CR>
+nnoremap zgk :action MethodUp<CR>
+nnoremap zgj :action MethodDown<CR>
+nnoremap <C-tab> :action NextTab<CR>
+nnoremap <C-S-tab> :action PreviousTab<CR>
 
-" Unit test related
-nnoremap ztt :action Rider.UnitTesting.QuickList<CR>
-nnoremap ztr :action Rider.UnitTesting.RunContext<CR>
-nnoremap zts :action Rider.UnitTesting.RunSolution<CR>
-nnoremap ztm :action RiderUnitTestDotMemoryUnitContextAction<CR>
+" 1-3. Split
+nnoremap <leader>,, :action StretchSplitToLeft<CR>
+nnoremap <leader>.. :action StretchSplitToRight<CR>
 
-" Debugging related
-nnoremap zbb :action BreakpointActionsGroup<CR>
-nnoremap zbd :action RiderRemoveAllLineBreakpoints<CR>
-nnoremap zbl :action ToggleLineBreakpoint<CR>
-nnoremap zbe :action ToggleBreakpointEnabled<CR>
+" 2-Editor
+" 2-1 Refactor related
+nnoremap zrr :action Refactorings.QuickListPopupAction<CR>
+vnoremap zrr :action Refactorings.QuickListPopupAction<CR>
+nnoremap zrn :action RenameElement<CR>
+nnoremap zru :action MoveStatementUp<CR>
+nnoremap zrd :action MoveStatementDown<CR>
+nnoremap zrin :action MoveElementRight<CR>
+nnoremap zrout :action MoveElementLeft<CR>
+nnoremap zrfix :action ShowIntentionActions<CR>
 
-" remap paste in inset mode
-inoremap <C-v> <esc>:action $Paste<CR>
-
-nnoremap <C-,> :action RenameElement<CR>
+# 2-2 Editting shortcut
 nnoremap <tab> >>
 nnoremap <S-tab> <<
 inoremap <tab> <C-t>
 inoremap <S-tab> <C-d>
 vnoremap <tab> >
 vnoremap <S-tab> <
+" remap paste in insert mode
+inoremap <C-v> <esc>:action $Paste<CR>
+" formatting
+nnoremap <leader>ff :action ReformatCode<CR>:action OptimizeImports<CR>
+nnoremap <leader>import :action ReformatCode<CR>
+
+# 2-3 Completion
+inoremap zcc <C-o>:action CodeCompletion<CR>
+inoremap zcs <C-o>:action EditorCompleteStatement<CR>
+
+# 2-4 Integration/Workflow
+nnoremap zcpu :action CopyUrl<CR>
+nnoremap zcpn :action CopyFileName<CR>
+nnoremap zcpr :action CopyFileReference<CR>
+nnoremap zcpp :action CopyAbsolutePath<CR>
+nnoremap zcpt :action CopyAsPlainText<CR>
+
+" 3 - Debug/Testing
+" 3-1 Unit test related
+nnoremap ztg :action Generate<CR>
+nnoremap ztt :action Rider.UnitTesting.QuickList<CR>
+nnoremap ztr :action Rider.UnitTesting.RunContext<CR>
+nnoremap zts :action Rider.UnitTesting.RunSolution<CR>
+nnoremap ztm :action RiderUnitTestDotMemoryUnitContextAction<CR>
+
+" 3-2 Debugging related
+nnoremap zbb :action BreakpointActionsGroup<CR>
+nnoremap zbd :action RiderRemoveAllLineBreakpoints<CR>
+nnoremap zbl :action ToggleLineBreakpoint<CR>
+nnoremap zbe :action ToggleBreakpointEnabled<CR>
+
+" Rider legacy
+nnoremap <leader>add :action AddAction<CR>
+nnoremap <leader>gg :action ReSharperNavigateTo<CR>
