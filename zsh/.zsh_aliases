@@ -1,6 +1,6 @@
 # Set up for Zsh aliases
-
 alias python="python3"
+
 pclip()
 {
     if [ -z "$1" ]; then

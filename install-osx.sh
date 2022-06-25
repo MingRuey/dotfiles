@@ -15,6 +15,7 @@ brew install autojump
 brew install xclip
 brew install task
 brew install tmux
+brew install gnu-sed
 
 exec_install_scripts()
 {
