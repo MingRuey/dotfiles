@@ -14,6 +14,8 @@
 
 [alias]
 	dog = log --all --pretty=format:\"%Cgreen%d %Cblue%h %Creset%<(50,trunc)%s [%an %ad]\" --graph --date=format:\"%m-%d %H\"
+    sinit = submodule update --init 
+    supdate = submodule update --remote --merge
 
 [push]
 	default = simple
