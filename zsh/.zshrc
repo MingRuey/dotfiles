@@ -70,9 +70,25 @@ fi
 # Advanced Tab completion
 autoload -U compinit
 compinit
-zstyle ':completion:*' menu select
-
 source $ZSH/oh-my-zsh.sh
+
+# Tab completion color
+export CLICOLOR=1
+export LS_COLORS='no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Tab completion with vim-style navigation
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+# osx hacks for ls, sed, etc.
+# alias ls="gls --color"
+# alias sed="gsed"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
