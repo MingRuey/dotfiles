@@ -3,7 +3,7 @@
 # copy vimrc file for VsVim (vim emulator for Visual Studio)
 WINUSERP=$(wslpath $(wslvar USERPROFILE))
 vsvimrc="$(dirname $(readlink -f $0))/.wsl.vsvimrc"
-ideavimrc="$(dirname $(readlink -f $0))/.wsl.ideavimrc"
+ideavimrc="$(dirname $(readlink -f $0))/ideavimrc"
 cp $vsvimrc $WINUSERP/_vsvimrc
 cp $ideavimrc $WINUSERP/_ideavimrc
 cp $ideavimrc ~/.ideavimrc
