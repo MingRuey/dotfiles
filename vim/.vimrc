@@ -7,6 +7,7 @@ syntax enable
 " vim color settings
 set t_Co=256
 set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 
 " vim wiki related settings
