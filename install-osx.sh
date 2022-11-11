@@ -10,12 +10,9 @@ brew install coreutils
 # Install oh-my-zsh, autojump, xcilp
 echo -n "Install oh-my-zsh"
 yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-brew install coreutils
-brew install autojump
-brew install xclip
-brew install task
-brew install tmux
-brew install gnu-sed
+brew install coreutils autojump xclip task tmux tig
+brew install reattach-to-user-namespace gnu-sed
+brew install --cask iterm2 alt-tab
 
 exec_install_scripts()
 {
