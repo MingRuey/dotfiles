@@ -25,6 +25,21 @@ pwsl()
     echo "clip path: $fullp"
 }
 
+nth() {
+    input=$(cat)
+    if [[ ! "$1" =~ ^-?[0-9]+$ ]]; then
+        echo "Usage: <output> | nth number"
+        return
+    fi
+    
+    if [[ ${1:0:1} == "-" ]]; then
+        number=${1:1}
+        echo $input | tail -$number | head -1
+    else
+        echo $input | head -$1 | tail -1
+    fi
+}
+
 # jump up to the directory with given name
 # if the folder with name not found, stay at pwd
 ju()
