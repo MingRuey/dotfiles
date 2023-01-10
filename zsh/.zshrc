@@ -85,11 +85,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-# osx hacks for ls, sed, etc.
-# alias ls="gls --color"
-# alias sed="gsed"
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 if [ -d "$HOME/.local/bin" ] ; then
