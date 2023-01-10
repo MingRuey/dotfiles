@@ -27,3 +27,6 @@ vnoremap <C-c> <C-[>
 
 " plugin related
 let g:camelcasemotion_key = '<leader>'
+
+" turn off gitgutter by default
+let g:gitgutter_signs = 0

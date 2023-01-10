@@ -17,6 +17,27 @@
     sinit = submodule update --init 
     supdate = submodule update --remote --merge
 
+    # list files which have changed since REVIEW_BASE, with diff stat and/or names
+    stat-dev = !git diff --stat $(git merge-base HEAD dev)
+    stat-main = !git diff --stat $(git merge-base HEAD main)
+	stat = stat-dev
+    files-dev = !git diff --name-only $(git merge-base HEAD dev)
+    files-main = !git diff --name-only $(git merge-base HEAD main)
+
+    # Open all files changed since REVIEW_BASE in Vim tabs
+    # Then, run fugitive's :Gdiff in each tab, and finally
+    # tell vim-gitgutter to show +/- for changes since REVIEW_BASE
+    review-dev = !vim -p $(git files-dev) +\"tabdo Gvdiff! dev\" +\"GitGutterSignsEnable\" +\"let g:gitgutter_diff_base = 'dev'\"
+    review-main = !vim -p $(git files-main) +\"tabdo Gvdiff! main\" +\"GitGutterSignsEnable\" +\"let g:gitgutter_diff_base = 'main'\"
+	review = review-dev
+
+    # Same as the above, except specify names of files as arguments,
+    # instead of opening all files:
+    # git reviewone foo.js bar.js
+    reviewone-dev = !vim -p +\"tabdo Gvdiff! dev\" +\"GitGutterSignsEnable\" +\"let g:gitgutter_diff_base = 'dev'\"
+    reviewone-main = !vim -p +\"tabdo Gvdiff! main\" +\"GitGutterSignsEnable\" +\"let g:gitgutter_diff_base = 'main'\"
+	reviewone = reviewone-dev
+
 [push]
 	default = simple
 
