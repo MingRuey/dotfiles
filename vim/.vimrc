@@ -17,7 +17,7 @@ au BufNewFile ~/vimwiki/diary/*.md :silent 0r !~/.vim/bin/generate-vimwiki-diary
 nnoremap <Leader>wdl vi]dviWp
 
 " edit settings
-set tabstop=4 shiftwidth=4 expandtab smarttab
+set tabstop=4 shiftwidth=4 expandtab autoindent
 set nowrap
 set pastetoggle=<F2>
 inoremap <C-[> <C-c>
