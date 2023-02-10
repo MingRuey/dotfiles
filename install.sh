@@ -1,4 +1,7 @@
 #!/bin/bash
+#for getting the latest neovim 
+sudo add-apt-repository ppa:neovim-ppa/stable 
+sudo apt-get update
 
 # Required packages:
 aptgetPKGS="zsh zsh-doc autojump taskwarrior xclip curl vim neovim"
@@ -35,7 +38,7 @@ GITDIR='/git/'
 NVIMDIR='/nvim/'
 COLORDIR="/color/"
 
-for directory in $BASHDIR $TMUXDIR $ZSHDIR $NVIMDIR $GITDIR $COLORDIR; do
+for directory in $BASHDIR $TMUXDIR $ZSHDIR $GITDIR $COLORDIR; do
     link_all "$BASE$directory"
 done
 

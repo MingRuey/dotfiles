@@ -1,4 +1,6 @@
-execute pathogen#infect()
+"load pathogen managed plugins
+call pathogen#infect()
+call pathogen#helptags()
 
 " general settings
 filetype plugin indent on
@@ -13,8 +15,7 @@ colorscheme solarized
 " vim wiki related settings
 set nocompatible
 let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
-au BufNewFile ~/vimwiki/diary/*.md :silent 0r !~/.vim/bin/generate-vimwiki-diary-template.py '%'
-nnoremap <Leader>wdl vi]dviWp
+au BufNewFile ~/vimwiki/diary/*.md :silent 0r !~/.config/nvim/bin/generate-vimwiki-diary-template.py '%'
 
 " edit settings
 set tabstop=4 shiftwidth=4 expandtab autoindent
