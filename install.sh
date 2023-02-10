@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Required packages:
-aptgetPKGS="zsh zsh-doc autojump taskwarrior xclip curl"
+aptgetPKGS="zsh zsh-doc autojump taskwarrior xclip curl vim neovim"
 
 echo "Check if $aptgetPKGS installed:"
 sudo apt-get install -y $aptgetPKGS
@@ -32,10 +32,10 @@ BASHDIR="/bash/"
 TMUXDIR="/tmux/"
 ZSHDIR="/zsh/"
 GITDIR='/git/'
-VIMDIR='/vim/'
+NVIMDIR='/nvim/'
 COLORDIR="/color/"
 
-for directory in $BASHDIR $TMUXDIR $ZSHDIR $VIMDIR $GITDIR $COLORDIR; do
+for directory in $BASHDIR $TMUXDIR $ZSHDIR $NVIMDIR $GITDIR $COLORDIR; do
     link_all "$BASE$directory"
 done
 
@@ -46,6 +46,6 @@ else
     SYSDIR="/ubuntu/"
 fi
 
-for directory in $ZSHDIR $VIMDIR $GITDIR $SYSDIR; do
+for directory in $ZSHDIR $NVIMDIR $GITDIR $SYSDIR; do
     exec_install_scripts "$BASE$directory"
 done
