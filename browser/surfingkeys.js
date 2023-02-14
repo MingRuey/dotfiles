@@ -56,23 +56,26 @@ api.unmap(';dh');
 api.unmap(';yh');
 
 // bookmarks
+api.unmap('ob'); 
+api.map('ob', 'b');  // Open bookmarks
+api.unmap('b');
 api.map('bb', 'ab'); 
 api.unmap('ab');
 api.map('bd', '<Ctrl-d>'); 
 api.unmap('<Ctrl-d>');
 
 // tab opening
-api.unmap('oi'); 
+api.unmap('oi');
 api.unmap('og');  // search alias
-api.unmap('od'); 
-api.unmap('ob'); 
-api.unmap('oe'); 
-api.unmap('ow'); 
-api.unmap('oy'); 
-api.unmap('ox'); 
-api.map('oo', 't'); 
+api.unmap('od');
+api.unmap('oe');
+api.unmap('ow');
+api.unmap('oy');
+api.unmap('ox');
+api.map('oo', 't');
 api.unmap('t');
 api.map('of', 'gf');  // open in background
+api.unmap('F');
 api.map('F', 'gf');
 api.map('oaf', 'af'); // open in active
 api.unmap('gf');
@@ -90,20 +93,18 @@ api.unmap('yt');
 api.unmap('yT');
 api.map('oc', 'cc');  // Open selected or from clipboard
 api.unmap('cc');
-api.map('ob', 'b');  // Open bookmarks
-api.unmap('b');
 api.map('ou', ';u');  // edit current url and open new
 api.unmap(';u'); 
 api.map('og', 'sg');  // open with google search
-api.unmap('sg'); 
-api.unmap('sd'); 
-api.unmap('sb'); 
-api.unmap('se'); 
-api.unmap('sw'); 
-api.unmap('ss'); 
+api.unmap('sg');
+api.unmap('sd');
+api.unmap('sb');
+api.unmap('se');
+api.unmap('sw');
+api.unmap('ss');
 api.unmap('sh'); 
 api.unmap('sy'); 
-api.unmap('H'); 
+api.unmap('H');
 
 // mouse
 api.unmap(';m');
@@ -143,10 +144,9 @@ api.unmap('zo');
 api.map('H', 'S'); 
 api.unmap('S'); 
 api.map('L', 'D'); 
-api.unmap('D'); 
-api.unmap('B'); 
-api.unmap('F'); 
-api.unmap('r'); 
+api.unmap('D');
+api.unmap('B');
+api.unmap('r');
 api.unmap('<Ctrl-6'); 
 api.map('gh', 'gu');  // go 'one-up' in terms of url
 api.unmap('gu');
@@ -156,27 +156,27 @@ api.map('gi', ';U');  // edit current url and visit
 api.unmap(';U'); 
 
 // Clip-board
-api.unmap('yS'); 
+api.unmap('yS');
 api.map('yt', 'yv');
 api.map('yT', 'ymv');
-api.unmap('yv'); 
-api.unmap('ymv'); 
+api.unmap('yv');
+api.unmap('ymv');
 api.map('yu', 'ya');
 api.map('yU', 'yma');
-api.unmap('ya'); 
+api.unmap('ya');
 api.unmap('yma'); 
-api.unmap('yc'); 
-api.unmap('ymc'); 
-api.unmap('yq'); 
-api.unmap('ys'); 
-api.unmap('yj'); 
-api.unmap('yh'); 
-api.unmap('yQ'); 
-api.unmap('yf'); 
-api.unmap('yp'); 
+api.unmap('yc');
+api.unmap('ymc');
+api.unmap('yq');
+api.unmap('ys');
+api.unmap('yj');
+api.unmap('yh');
+api.unmap('yQ');
+api.unmap('yf');
+api.unmap('yp');
 
 // going-to tab
-api.unmap('g0'); 
+api.unmap('g0');
 api.unmap('g$');
 api.map('zgh', 'E');
 api.unmap('E');
