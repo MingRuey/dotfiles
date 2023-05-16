@@ -1,5 +1,7 @@
 // Change where little text appears
 settings.hintAlign = "left"
+settings.blocklistPattern = /docs.google.com\/presentation/;
+settings.blocklistPattern = /docs.google.com\/document/;
 
 // Other removals of defaults
 //  -- syntax: 
@@ -54,6 +56,10 @@ api.unmap(';s');
 api.unmap(';ph');
 api.unmap(';dh');
 api.unmap(';yh');
+
+// pdfs
+api.unmap(';s');
+api.map(';pdf', ';s');
 
 // bookmarks
 api.unmap('ob'); 
