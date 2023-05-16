@@ -30,6 +30,8 @@ nnoremap zor :action ExpandRegionRecursively<CR>
 nnoremap zp :action ShowErrorDescription<CR>
 
 " 1-2. Navigation
+nnoremap gjj :action AceAction<CR>
+nnoremap gjl :action AceLineAction<CR>
 nnoremap zff :action ShowNavBar<CR>
 nnoremap zgg :action FileStructurePopup<CR>
 nnoremap zgp :action GotoNextError<CR>

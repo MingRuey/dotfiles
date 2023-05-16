@@ -1,5 +1,36 @@
 # Set up for Zsh aliases
 alias python="python3"
+alias pip3="python3.8 -m pip"
+
+# Use taskwarrior to control sprint tag
+sprint() {
+    help="Usage: sprint start/autoremove"
+    if [[ -z ${1+x} ]]; then
+        echo $help
+        return 1
+    else
+        case "$1" in
+            start)
+                yes | task \(+sprint status.not:completed and status.not:deleted \) modify "due:$(date -d '1 week next Friday' +'%Y-%m-%d')"
+                yes | task \(+sprint status.not:completed and status.not:deleted \) start
+                ;;
+            autoremove)
+                past_sprint_uuids=$(task completed +sprint rc.verbose=nothing | awk '{ print $2 }')
+                past_sprint_uuids=$past_sprint_uuids$(task status:deleted all +sprint rc.verbose:nothing | awk '{print $3}')
+                if [[ ! -z "${past_sprint_uuids// }" ]]
+                then 
+                    echo "Removing tasks:"
+                    echo $past_sprint_uuids
+                    yes | task $past_sprint_uuids modify -sprint
+                fi
+                ;;
+            *)
+                echo "wiki: unrecognized command $1"
+                echo $help
+                ;;
+        esac
+    fi
+}
 
 pclip()
 {

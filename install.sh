@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Required packages:
-aptgetPKGS="zsh zsh-doc autojump taskwarrior xclip"
+aptgetPKGS="zsh zsh-doc autojump taskwarrior xclip curl"
 
 echo "Check if $aptgetPKGS installed:"
 sudo apt-get install -y $aptgetPKGS
