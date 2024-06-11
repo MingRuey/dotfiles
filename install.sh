@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Required packages:
-aptgetPKGS="zsh zsh-doc autojump taskwarrior xclip curl"
+aptgetPKGS="zsh zsh-doc autojump taskwarrior xclip curl bastet cmatrix sl"
 
 echo "Check if $aptgetPKGS installed:"
 sudo apt-get install -y $aptgetPKGS
