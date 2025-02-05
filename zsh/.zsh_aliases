@@ -3,6 +3,21 @@ alias python="python3.8"
 alias python3="python3.8"
 alias pip3="python3.8 -m pip"
 
+ghlink() {
+    if [[ -z ${1+x} ]]; then
+        echo "Usage: ghlink path-of-a-local-git-repo-file"
+        echo "It will show the permenant link to GitHub website of that files"
+        return 1
+
+    GIT_URL=$(git config --local remote.origin.url | cut -d "@" -f 2 | cut -d "." -f "1-2" | sed "s/:/\//")
+    URL="https://${GIT_URL}"
+    BRANCH=`git rev-parse --abbrev-ref HEAD`
+    FILE=$1
+
+    echo $URL/blob/$BRANCH/$FILE
+    exit 0
+}
+
 # Use taskwarrior to control sprint tag
 sprint() {
     help="Usage: sprint start/autoremove"
