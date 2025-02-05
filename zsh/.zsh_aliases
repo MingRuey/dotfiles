@@ -8,6 +8,7 @@ ghlink() {
         echo "Usage: ghlink path-of-a-local-git-repo-file"
         echo "It will show the permenant link to GitHub website of that files"
         return 1
+    fi
 
     GIT_URL=$(git config --local remote.origin.url | cut -d "@" -f 2 | cut -d "." -f "1-2" | sed "s/:/\//")
     URL="https://${GIT_URL}"
