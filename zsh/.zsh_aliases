@@ -15,7 +15,6 @@ ghlink() {
     FILE=$1
 
     echo $URL/blob/$BRANCH/$FILE
-    exit 0
 }
 
 # Use taskwarrior to control sprint tag
