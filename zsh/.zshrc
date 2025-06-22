@@ -88,7 +88,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
 # osx hacks for ls, sed, etc.
-alias ls="gls --color"
+alias ls="ls --color"
 alias sed="gsed"
 
 # User configuration
