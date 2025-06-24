@@ -1,0 +1,85 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "always_allow_tool_actions": true,
+    "stream_edits": true,
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "model_parameters": [],
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:2067",
+      "available_models": [
+        {
+          "name": "llama3-groq-tool-use:8b",
+          "max_tokens": 32767
+        }
+      ]
+    }
+  },
+  "ssh_connections": [
+    {
+      "host": "122.116.105.200",
+      "username": "mrchou",
+      "args": [
+        "-i",
+        "~/.ssh/id_remote"
+      ],
+      "projects": [
+        {
+          "paths": [
+            "/home/mrchou/code/galaxy-network"
+          ]
+        }
+      ],
+      "nickname": "City7"
+    }
+  ],
+  "ui_font_size": 20,
+  "buffer_font_size": 18,
+  "agent_font_size": 20,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Tokyo Night"
+  },
+  "experimental.theme_overrides": {
+    "created": "#85b304ff",
+    "created.background": "#e9efd2ff",
+    "created.border": "#d7e3aeff",
+    "modified": "#f1ad49ff",
+    "modified.background": "#ffeedaff",
+    "modified.border": "#ffe1beff",
+    "deleted": "#ef7177ff",
+    "deleted.background": "#48161bff",
+    "deleted.border": "#66272dff"
+  },
+  "project_panel": {
+    "dock": "right",
+    "default_width": 500
+  },
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "format_on_save": "off",
+  "terminal": {
+    "dock": "right"
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  }
+}
