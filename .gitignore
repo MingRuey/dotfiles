@@ -1,5 +1,5 @@
 # Ignore test script
-test.sh
+zed/prompts
 
 # Ignore local setting
 *.local

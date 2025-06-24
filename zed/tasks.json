@@ -1,0 +1,15 @@
+// Static tasks configuration.
+//
+// Example:
+[
+  {
+    "label": "Connect City7 Ollama",
+    "command": "/Users/chou/Code/tools/proxy-to-city7-ollama/connect.sh",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "never",
+    "reveal_target": "dock",
+    "hide": "never",
+    "shell": {"program": "bash"}
+  }
+]

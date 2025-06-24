@@ -1,0 +1,139 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "cmd-shift-o": null,
+      "cmd-m": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-t": null,
+      "cmd-p": null,
+      "cmd-shift-p": null,
+      "cmd-shift-e": null,
+      "cmd-shift-d": null,
+      "ctrl-shift-g": null,
+      "cmd-shift-b": null,
+      "cmd-?": null,
+      "\\ \\": "task::Spawn",
+      "cmd-1": "project_panel::ToggleFocus",
+      "alt-1": "project_panel::ToggleFocus",
+      "cmd-2": "agent::ToggleFocus",
+      "alt-2": "agent::ToggleFocus",
+      "cmd-3": "terminal_panel::ToggleFocus",
+      "alt-3": "terminal_panel::ToggleFocus",
+      "cmd-4": null,
+      "alt-4": null,
+      "z g f": "file_finder::Toggle",
+      "z g s": "project_symbols::Toggle"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "cmd-d": null,
+      "cmd-1": "workspace::ToggleRightDock",
+      "alt-1": "workspace::ToggleRightDock"
+    }
+  },
+    {
+      "context": "AgentPanel",
+      "bindings": {
+        "cmd-2": "workspace::ToggleRightDock",
+        "alt-2": "workspace::ToggleRightDock",
+        "cmd-alt-e": null,
+        "ctrl-a": "agent::RemoveAllContext",
+        "cmd-shift-a": null
+      }
+    },
+    {
+      "context": "PromptEditor"
+    },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-shift-tab": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-enter": null,
+      "ctrl-c": "vim::SwitchToNormalMode",
+      "cmd-shift-i": null,
+      "shift shift": "assistant::InlineAssist"
+    }
+  },
+  {
+    "context": "Editor && vim_mode==normal",
+    "bindings": {
+      "z g p": "editor::GoToDiagnostic",
+      "z p": "editor::ToggleInlineDiagnostics",
+      "[ m": "vim::PreviousMethodStart",
+      "] m": "vim::NextMethodStart",
+      "[ h": "editor::GoToPreviousHunk",
+      "] h": "editor::GoToHunk",
+      "[ c": "editor::GoToPreviousChange",
+      "] c": "editor::GoToNextChange",
+      "z r r": "editor::Rename",
+      // commands start with z-z are dummy commands that should be chained via "workspace::SendKeystrokes"
+      "z z r f": "editor::Format",
+      "z r f": ["workspace::SendKeystrokes", "z z r f enter"]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g space": null,
+      "z r f i x": "editor::ToggleCodeActions",
+      "g .": null,
+      "shift-enter": "editor::OpenExcerptsSplit",
+      "ctrl-enter": "editor::OpenExcerpts"
+    }
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "z shift-c": null,
+      "z g g": "outline::Toggle",
+      "z f f": "editor::ToggleFold",
+      "z f r": "editor::ToggleFoldRecursive",
+      "z u u": "editor::UnfoldLines",
+      "z u r": "editor::UnfoldRecursive",
+      "z f a": "editor::FoldAll",
+      "z u a": "editor::UnfoldAll",
+      "z f d": "editor::ToggleSelectedDiffHunks"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "z f": "editor::FoldSelectedRanges"
+      // "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // Put key bindings here (in addition to the context above) if you want them to
+      // work when no editor exists.
+      // "space f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "AgentConfiguration",
+      "bindings": {
+        "backspace": "pane::GoBack",
+        "escape": "pane::GoBack"
+      }
+  }
+]
