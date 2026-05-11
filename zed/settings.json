@@ -88,6 +88,11 @@
       "projects": [
         {
           "paths": [
+            "/home/mrchou/code/agent-skills"
+          ]
+        },
+        {
+          "paths": [
             "/home/mrchou/code/cs231a"
           ]
         },

@@ -22,7 +22,6 @@
       "ctrl-shift-g": null,
       "cmd-shift-b": null,
       "cmd-r": null,
-      "cmd-j": null,
       "cmd-?": null,
       "\\ \\": "task::Spawn",
       "cmd-1": "project_panel::ToggleFocus",
@@ -76,7 +75,6 @@
       "cmd-r": "agent::Reject",
       "shift-alt-y": null,
       "shift-alt-z": null,
-      "cmd-shift-k": "agent::KeepAll",
       "cmd-shift-r": "agent::RejectAll",
     },
   },
@@ -92,7 +90,7 @@
       "cmd-alt-c": null,
       "cmd-alt-l": null,
       "cmd-alt-p": null,
-      "cmd-j": "agent::ToggleProfileSelector",
+      "cmd-shift-j": "agent::ToggleProfileSelector",
       "shift-tab": null,
       "cmd-alt-/": null,
       "alt-tab": null,
@@ -111,8 +109,7 @@
       "g d": "agent::OpenAgentDiff",
       "cmd-shift-k": "agent::KeepAll",
       "cmd-shift-r": "agent::RejectAll",
-      "cmd-l": "agent::CycleModeSelector",
-      "cmd-m": "agent::CycleFavoriteModels",
+      "ctrl-cmd-m": "agent::CycleFavoriteModels",
     },
   },
   {
@@ -155,17 +152,13 @@
       "cmd-alt-backspace": "agent::ClearMessageQueue",
       "cmd-shift-v": "agent::PasteRaw",
       "cmd-i": "agent::ToggleProfileSelector",
-      "shift-tab": "agent::CycleModeSelector",
-      "alt-tab": "agent::CycleFavoriteModels",
       "ctrl-;": "agent::OpenAddContextMenu",
-      "cmd-alt-k": "agent::ToggleThinkingMode",
       "cmd-alt-'": "agent::ToggleThinkingEffortMenu",
       "ctrl-'": "agent::CycleThinkingEffort",
-      "cmd-alt-.": "agent::ToggleFastMode",
       "ctrl-alt-up": null,
       "ctrl-alt-down": null,
-      "ctrl-alt-k": "agent::ScrollOutputLineUp",
-      "ctrl-alt-j": "agent::ScrollOutputLineDown"
+      "shift-k": "agent::ScrollOutputLineUp",
+      "shift-j": "agent::ScrollOutputLineDown"
     },
   },
   {
@@ -318,6 +311,48 @@
     "context": "Editor && jupyter && !ContextEditor",
     "unbind": {
       "ctrl-shift-enter": "repl::Run"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "bindings": {
+      "cmd-shift-m": "agent::CycleModeSelector"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "unbind": {
+      "shift-tab": "agent::CycleModeSelector"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "unbind": {
+      "alt-cmd-.": "agent::ToggleFastMode"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "unbind": {
+      "alt-cmd-k": "agent::ToggleThinkingMode"
+    }
+  },
+  {
+    "context": "InlineAssistant > Editor",
+    "unbind": {
+      "alt-tab": "agent::CycleFavoriteModels"
+    }
+  },
+  {
+    "context": "InlineAssistant > Editor",
+    "unbind": {
+      "alt-cmd-/": "agent::ToggleModelSelector"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "unbind": {
+      "alt-tab": "agent::CycleFavoriteModels"
     }
   }
 ]
