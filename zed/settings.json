@@ -7,30 +7,75 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "favorite_config_option_values": {
+        "mode": [
+          "default"
+        ]
+      },
+      "type": "registry"
+    },
+    "gemini": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "show_edit_predictions": true,
+  "debugger": {
+    "dock": "right"
+  },
   "agent": {
-    "always_allow_tool_actions": true,
-    "stream_edits": true,
+    "sidebar_side": "right",
+    "dock": "right",
+    "favorite_models": [
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6-latest",
+        "enable_thinking": false
+      }
+    ],
+    "tool_permissions": {
+      "default": "allow",
+      "tools": {
+        "write_file": { "default": "confirm" },
+        "edit_file": { "default": "confirm" },
+        "delete_file": { "default": "confirm" }
+      },
+    },
+    "notify_when_agent_waiting": "never",
     "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest"
     },
     "model_parameters": [],
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
-    },
-    "version": "2"
-  },
-  "language_models": {
-    "ollama": {
-      "api_url": "http://localhost:2067",
-      "available_models": [
-        {
-          "name": "llama3-groq-tool-use:8b",
-          "max_tokens": 32767
-        }
-      ]
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest"
     }
+  },
+  "languages": {
+    "Python": {"show_edit_predictions": true,
+               "language_servers": ["ruff"]}
+  },
+  "file_types": {
+    "C++": ["tpp"]
   },
   "ssh_connections": [
     {
@@ -43,6 +88,11 @@
       "projects": [
         {
           "paths": [
+            "/home/mrchou/code/cs231a"
+          ]
+        },
+        {
+          "paths": [
             "/home/mrchou/code/galaxy-network"
           ]
         }
@@ -52,7 +102,6 @@
   ],
   "ui_font_size": 20,
   "buffer_font_size": 18,
-  "agent_font_size": 20,
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -73,13 +122,14 @@
     "dock": "right",
     "default_width": 500
   },
+  "jupyter": {
+    "enabled": true,
+    "kernel_selections": {"python": "jupyter-venv"}
+  },
   "vim_mode": true,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "format_on_save": "off",
   "terminal": {
     "dock": "right"
-  },
-  "features": {
-    "edit_prediction_provider": "copilot"
   }
 }

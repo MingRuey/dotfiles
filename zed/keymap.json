@@ -17,14 +17,18 @@
     "bindings": {
       "cmd-t": null,
       "cmd-p": null,
-      "cmd-shift-p": null,
       "cmd-shift-e": null,
       "cmd-shift-d": null,
       "ctrl-shift-g": null,
       "cmd-shift-b": null,
+      "cmd-r": null,
+      "cmd-j": null,
       "cmd-?": null,
       "\\ \\": "task::Spawn",
       "cmd-1": "project_panel::ToggleFocus",
+      "cmd-alt-;": null,
+      "cmd-alt-j": null,
+      "cmd-shift-p": "multi_workspace::ToggleWorkspaceSidebar",
       "alt-1": "project_panel::ToggleFocus",
       "cmd-2": "agent::ToggleFocus",
       "alt-2": "agent::ToggleFocus",
@@ -37,6 +41,24 @@
     }
   },
   {
+    "context": "ImageViewer",
+    "use_key_equivalents": false,
+    "bindings": {
+      "=": "image_viewer::ZoomIn",
+      "+": "image_viewer::ZoomIn",
+      "-": "image_viewer::ZoomOut",
+      "0": "image_viewer::ResetZoom",
+      "9": "image_viewer::FitToView",
+      "1": "image_viewer::ZoomToActualSize",
+      "cmd-=": null,
+      "cmd-+": null,
+      "cmd--": null,
+      "cmd-0": null,
+      "cmd-1": null,
+      "cmd-shift-0": null
+    }
+  },
+  {
     "context": "ProjectPanel",
     "bindings": {
       "cmd-d": null,
@@ -44,19 +66,111 @@
       "alt-1": "workspace::ToggleRightDock"
     }
   },
-    {
-      "context": "AgentPanel",
-      "bindings": {
-        "cmd-2": "workspace::ToggleRightDock",
-        "alt-2": "workspace::ToggleRightDock",
-        "cmd-alt-e": null,
-        "ctrl-a": "agent::RemoveAllContext",
-        "cmd-shift-a": null
-      }
+  {
+    "context": "AgentDiff",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-y": null,
+      "cmd-alt-y": null,
+      "cmd-alt-z": null,
+      "cmd-r": "agent::Reject",
+      "shift-alt-y": null,
+      "shift-alt-z": null,
+      "cmd-shift-k": "agent::KeepAll",
+      "cmd-shift-r": "agent::RejectAll",
     },
-    {
-      "context": "PromptEditor"
+  },
+  {
+    "context": "AgentPanel",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-2": "workspace::ToggleRightDock",
+      "alt-2": "workspace::ToggleRightDock",
+      "cmd-alt-e": null,
+      "cmd-shift-n": "agent::NewThread",
+      "cmd-alt-n": null,
+      "cmd-alt-c": null,
+      "cmd-alt-l": null,
+      "cmd-alt-p": null,
+      "cmd-j": "agent::ToggleProfileSelector",
+      "shift-tab": null,
+      "cmd-alt-/": null,
+      "alt-tab": null,
+      "cmd-shift-j": null,
+      "cmd-alt-m": null,
+      "cmd-alt-shift-n": null,
+      "shift-alt-escape": null,
+      "cmd->": null,
+      "cmd-shift-e": null,
+      "cmd-shift-enter": null,
+      "cmd-y": null,
+      "cmd-k": "agent::AllowOnce",
+      "cmd-shift-a": "agent::AllowAlways",
+      "cmd-alt-a": null,
+      "cmd-r": "agent::RejectOnce",
+      "g d": "agent::OpenAgentDiff",
+      "cmd-shift-k": "agent::KeepAll",
+      "cmd-shift-r": "agent::RejectAll",
+      "cmd-l": "agent::CycleModeSelector",
+      "cmd-m": "agent::CycleFavoriteModels",
     },
+  },
+  {
+    "context": "Editor && editor_agent_diff",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-k": "agent::Keep",
+      "cmd-r": "agent::Reject",
+      "cmd-shift-k": "agent::KeepAll",
+      "cmd-shift-r": "agent::RejectAll",
+      "cmd-shift-d": "agent::OpenAgentDiff",
+    },
+  },
+  {
+    "context": "AgentDiff",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-r": "agent::Reject",
+      "cmd-shift-k": "agent::KeepAll",
+      "cmd-shift-r": "agent::RejectAll",
+      "cmd-shift-d": "agent::OpenAgentDiff",
+    },
+  },
+  {
+    "context": "AcpThread > Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "shift-ctrl-r": "agent::OpenAgentDiff",
+      "shift-ctrl-d": "git::Diff",
+      "shift-alt-y": null,
+      "shift-alt-z": null,
+      "cmd-shift-k": "agent::KeepAll",
+      "cmd-shift-r": "agent::RejectAll",
+      "shift-alt-u": "agent::UndoLastReject",
+      "cmd-enter": "agent::ChatWithFollow",
+      "cmd-shift-enter": "agent::SendImmediately",
+      "cmd-shift-alt-enter": "agent::SendNextQueuedMessage",
+      "cmd-shift-backspace": "agent::RemoveFirstQueuedMessage",
+      "cmd-ctrl-e": "agent::EditFirstQueuedMessage",
+      "cmd-alt-backspace": "agent::ClearMessageQueue",
+      "cmd-shift-v": "agent::PasteRaw",
+      "cmd-i": "agent::ToggleProfileSelector",
+      "shift-tab": "agent::CycleModeSelector",
+      "alt-tab": "agent::CycleFavoriteModels",
+      "ctrl-;": "agent::OpenAddContextMenu",
+      "cmd-alt-k": "agent::ToggleThinkingMode",
+      "cmd-alt-'": "agent::ToggleThinkingEffortMenu",
+      "ctrl-'": "agent::CycleThinkingEffort",
+      "cmd-alt-.": "agent::ToggleFastMode",
+      "ctrl-alt-up": null,
+      "ctrl-alt-down": null,
+      "ctrl-alt-k": "agent::ScrollOutputLineUp",
+      "ctrl-alt-j": "agent::ScrollOutputLineDown"
+    },
+  },
+  {
+
+  },
   {
     "context": "Pane",
     "bindings": {
@@ -67,10 +181,9 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-enter": null,
-      "ctrl-c": "vim::SwitchToNormalMode",
       "cmd-shift-i": null,
-      "shift shift": "assistant::InlineAssist"
+      "shift shift": "assistant::InlineAssist",
+      "ctrl-space": "editor::ShowCompletions"
     }
   },
   {
@@ -95,9 +208,13 @@
     "bindings": {
       "g space": null,
       "z r f i x": "editor::ToggleCodeActions",
+      "z r e p l": "repl::Run",
       "g .": null,
+      "g d": "editor::GoToDeclaration",
+      "g r": "editor::FindAllReferences",
       "shift-enter": "editor::OpenExcerptsSplit",
-      "ctrl-enter": "editor::OpenExcerpts"
+      "ctrl-enter": "editor::OpenExcerpts",
+      "ctrl-c": "vim::SwitchToNormalMode"
     }
   },
   {
@@ -122,6 +239,29 @@
     }
   },
   {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-l": "editor::ShowEditPrediction",
+      "ctrl-k": "editor::ShowCompletions",
+      "ctrl-x ctrl-o": null,
+      "ctrl-x ctrl-c": null
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-shift-enter": null,
+      "ctrl-alt-enter": null,
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "o": "project_panel::OpenPermanent"
+    }
+  },
+  {
     "context": "EmptyPane || SharedScreen",
     "bindings": {
       // Put key bindings here (in addition to the context above) if you want them to
@@ -135,5 +275,49 @@
         "backspace": "pane::GoBack",
         "escape": "pane::GoBack"
       }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "ctrl-l": "editor::AcceptNextWordEditPrediction",
+      "ctrl-j": "editor::AcceptNextLineEditPrediction",
+      "ctrl-enter": "editor::AcceptEditPrediction",
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "bindings": {
+      "z r e": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "unbind": {
+      "ctrl-shift-enter": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "bindings": {
+      "z r e": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "unbind": {
+      "ctrl-shift-enter": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "bindings": {
+      "cmd-enter": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "unbind": {
+      "ctrl-shift-enter": "repl::Run"
+    }
   }
 ]
