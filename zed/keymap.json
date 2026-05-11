@@ -22,6 +22,7 @@
       "cmd-shift-d": null,
       "ctrl-shift-g": null,
       "cmd-shift-b": null,
+      "cmd-r": null,
       "cmd-?": null,
       "\\ \\": "task::Spawn",
       "cmd-1": "project_panel::ToggleFocus",
@@ -44,19 +45,105 @@
       "alt-1": "workspace::ToggleRightDock"
     }
   },
-    {
-      "context": "AgentPanel",
-      "bindings": {
-        "cmd-2": "workspace::ToggleRightDock",
-        "alt-2": "workspace::ToggleRightDock",
-        "cmd-alt-e": null,
-        "ctrl-a": "agent::RemoveAllContext",
-        "cmd-shift-a": null
-      }
+  {
+    "context": "AgentDiff",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-y": null,
+      "cmd-alt-y": null,
+      "cmd-alt-z": null,
+      "cmd-r": "agent::Reject",
+      "shift-alt-y": null,
+      "shift-alt-z": null,
+      "cmd-shift-r": "agent::RejectAll",
     },
-    {
-      "context": "PromptEditor"
+  },
+  {
+    "context": "AgentPanel",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-2": "workspace::ToggleRightDock",
+      "alt-2": "workspace::ToggleRightDock",
+      "cmd-alt-e": null,
+      "cmd-shift-n": "agent::NewThread",
+      "cmd-alt-n": null,
+      "cmd-alt-c": null,
+      "cmd-alt-l": null,
+      "cmd-alt-p": null,
+      "cmd-shift-j": "agent::ToggleProfileSelector",
+      "shift-tab": null,
+      "cmd-alt-/": null,
+      "alt-tab": null,
+      "cmd-shift-j": null,
+      "cmd-alt-m": null,
+      "cmd-alt-shift-n": null,
+      "shift-alt-escape": null,
+      "cmd->": null,
+      "cmd-shift-e": null,
+      "cmd-shift-enter": null,
+      "cmd-y": null,
+      "cmd-k": "agent::AllowOnce",
+      "cmd-shift-a": "agent::AllowAlways",
+      "cmd-alt-a": null,
+      "cmd-r": "agent::RejectOnce",
+      "g d": "agent::OpenAgentDiff",
+      "cmd-shift-k": "agent::KeepAll",
+      "cmd-shift-r": "agent::RejectAll",
+      "ctrl-cmd-m": "agent::CycleFavoriteModels",
     },
+  },
+  {
+    "context": "Editor && editor_agent_diff",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-k": "agent::Keep",
+      "cmd-r": "agent::Reject",
+      "cmd-shift-k": "agent::KeepAll",
+      "cmd-shift-r": "agent::RejectAll",
+      "cmd-shift-d": "agent::OpenAgentDiff",
+    },
+  },
+  {
+    "context": "AgentDiff",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-r": "agent::Reject",
+      "cmd-shift-k": "agent::KeepAll",
+      "cmd-shift-r": "agent::RejectAll",
+      "cmd-shift-d": "agent::OpenAgentDiff",
+    },
+  },
+  {
+    "context": "AcpThread > Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "shift-ctrl-r": "agent::OpenAgentDiff",
+      "shift-ctrl-d": "git::Diff",
+      "shift-alt-y": null,
+      "shift-alt-z": null,
+      "cmd-shift-k": "agent::KeepAll",
+      "cmd-shift-r": "agent::RejectAll",
+      "shift-alt-u": "agent::UndoLastReject",
+      "cmd-enter": "agent::ChatWithFollow",
+      "cmd-shift-enter": "agent::SendImmediately",
+      "cmd-shift-alt-enter": "agent::SendNextQueuedMessage",
+      "cmd-shift-backspace": "agent::RemoveFirstQueuedMessage",
+      "cmd-ctrl-e": "agent::EditFirstQueuedMessage",
+      "cmd-alt-backspace": "agent::ClearMessageQueue",
+      "cmd-shift-v": "agent::PasteRaw",
+      "cmd-i": "agent::ToggleProfileSelector",
+      "ctrl-;": "agent::OpenAddContextMenu",
+      "cmd-alt-'": "agent::ToggleThinkingEffortMenu",
+      "ctrl-'": "agent::CycleThinkingEffort",
+      "ctrl-alt-up": null,
+      "ctrl-alt-down": null,
+      "shift-k": "agent::ScrollOutputLineUp",
+      "shift-j": "agent::ScrollOutputLineDown"
+    },
+  },
+  {
+
+  },
   {
     "context": "Pane",
     "bindings": {
@@ -135,5 +222,91 @@
         "backspace": "pane::GoBack",
         "escape": "pane::GoBack"
       }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "ctrl-l": "editor::AcceptNextWordEditPrediction",
+      "ctrl-j": "editor::AcceptNextLineEditPrediction",
+      "ctrl-enter": "editor::AcceptEditPrediction",
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "bindings": {
+      "z r e": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "unbind": {
+      "ctrl-shift-enter": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "bindings": {
+      "z r e": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "unbind": {
+      "ctrl-shift-enter": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "bindings": {
+      "cmd-enter": "repl::Run"
+    }
+  },
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "unbind": {
+      "ctrl-shift-enter": "repl::Run"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "bindings": {
+      "cmd-shift-m": "agent::CycleModeSelector"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "unbind": {
+      "shift-tab": "agent::CycleModeSelector"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "unbind": {
+      "alt-cmd-.": "agent::ToggleFastMode"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "unbind": {
+      "alt-cmd-k": "agent::ToggleThinkingMode"
+    }
+  },
+  {
+    "context": "InlineAssistant > Editor",
+    "unbind": {
+      "alt-tab": "agent::CycleFavoriteModels"
+    }
+  },
+  {
+    "context": "InlineAssistant > Editor",
+    "unbind": {
+      "alt-cmd-/": "agent::ToggleModelSelector"
+    }
+  },
+  {
+    "context": "AcpThread > Editor",
+    "unbind": {
+      "alt-tab": "agent::CycleFavoriteModels"
+    }
   }
 ]
