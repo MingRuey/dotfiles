@@ -76,9 +76,14 @@ inoremap <C-v> <esc>:action $Paste<CR>
 nnoremap <leader>ff :action ReformatCode<CR>:action OptimizeImports<CR>
 nnoremap <leader>import :action ReformatCode<CR>
 
-# 2-3 Completion
+# 2-3 Completion and Copilot
 inoremap zcc <C-o>:action CodeCompletion<CR>
 inoremap zcs <C-o>:action EditorCompleteStatement<CR>
+inoremap zcl <C-o>:action copilot.applyInlaysNextLine<CR>
+inoremap zcw <C-o>:action copilot.applyInlaysNextWord<CR>
+inoremap zcj <C-o>:action copilot.cycleNextInlays<CR>
+inoremap zck <C-o>:action copilot.cyclePrevInlays<CR>
+
 
 # 2-4 Integration/Workflow
 nnoremap zcpu :action CopyUrl<CR>

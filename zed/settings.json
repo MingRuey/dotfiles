@@ -7,47 +7,85 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_buffer_font_size": 20.0,
+  "agent_ui_font_size": 22.0,
   "outline_panel": {
-    "button": false
+    "dock": "right"
   },
   "collaboration_panel": {
-    "button": false
+    "dock": "right"
   },
   "git_panel": {
-    "button": false
-  },
-  "edit_predictions": {
-    "allow_data_collection": "no",
-    "provider": "copilot"
+    "dock": "right"
   },
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
-        "mode": "bypassPermissions"
+        "mode": "bypassPermissions",
+        "model": "opus"
       },
+      "favorite_config_option_values": {
+        "mode": [
+          "default"
+        ]
+      },
+      "type": "registry"
+    },
+    "gemini": {
+      "type": "registry"
+    },
+    "codex-acp": {
       "type": "registry"
     }
   },
-  "cli_default_open_behavior": "existing_window",
-  "agent": {
-    "enable_feedback": false,
-    "button": false,
-    "terminal_init_command": "",
-    "notify_when_agent_waiting": "never",
-    "dock": "right",
-    "sidebar_side": "right",
-    "model_parameters": []
+  "edit_predictions": {
+    "provider": "copilot"
   },
-  "language_models": {
-    "ollama": {
-      "api_url": "http://localhost:2067",
-      "available_models": [
-        {
-          "name": "llama3-groq-tool-use:8b",
-          "max_tokens": 32767
-        }
-      ]
+  "show_edit_predictions": true,
+  "debugger": {
+    "dock": "right"
+  },
+  "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "default_width": 700.0,
+    "limit_content_width": false,
+    "dock": "right",
+    "favorite_models": [
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6-latest",
+        "enable_thinking": false
+      }
+    ],
+    "tool_permissions": {
+      "default": "allow",
+      "tools": {
+        "write_file": { "default": "confirm" },
+        "edit_file": { "default": "confirm" },
+        "delete_file": { "default": "confirm" }
+      },
+    },
+    "notify_when_agent_waiting": "never",
+    "inline_assistant_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest"
+    },
+    "model_parameters": [],
+    "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest"
     }
+  },
+  "languages": {
+    "Python": {"show_edit_predictions": true,
+               "language_servers": ["ruff"]}
+  },
+  "file_types": {
+    "C++": ["tpp"]
   },
   "ssh_connections": [
     {
@@ -67,9 +105,31 @@
           "paths": [
             "/home/mrchou/code/cs231a"
           ]
+        },
+        {
+          "paths": [
+            "/home/mrchou/code/galaxy-network"
+          ]
         }
       ],
       "nickname": "City7"
+    },
+    {
+      "host": "gpgpu2.stars.axelspace.com",
+      "username": "ray",
+      "args": [
+        "-i",
+        "~/.ssh/id_remote",
+        "-o",
+        "IdentitiesOnly=yes"
+      ],
+      "projects": [
+        {
+          "paths": [
+            "/home/ray/code/g3calval-scheduler"
+          ]
+        }
+      ]
     },
     {
       "host": "git.stars.axelspace.com",
@@ -77,8 +137,8 @@
       "projects": []
     }
   ],
-  "ui_font_size": 20,
-  "buffer_font_size": 18,
+  "ui_font_size": 20.0,
+  "buffer_font_size": 18.0,
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -96,15 +156,17 @@
     "deleted.border": "#66272dff"
   },
   "project_panel": {
-    "button": false,
     "dock": "right",
     "default_width": 500
+  },
+  "jupyter": {
+    "enabled": true,
+    "kernel_selections": {"python": "jupyter-venv"}
   },
   "vim_mode": true,
   "relative_line_numbers": "enabled",
   "format_on_save": "off",
   "terminal": {
-    "button": false,
     "dock": "right"
   }
 }

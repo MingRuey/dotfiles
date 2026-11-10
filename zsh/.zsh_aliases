@@ -1,6 +1,7 @@
 # Set up for Zsh aliases
-alias python="python3"
-alias pip="python3 -m pip"
+alias python="python3.13"
+alias python3="python3.13"
+alias pip3="python3.13 -m pip"
 
 ghlink() {
     if [[ -z ${1+x} ]]; then
@@ -72,7 +73,6 @@ pwsl()
 }
 
 nth() {
-    input=$(cat)
     if [[ ! "$1" =~ ^-?[0-9]+$ ]]; then
         echo "Usage: <output> | nth number"
         return
@@ -80,9 +80,9 @@ nth() {
     
     if [[ ${1:0:1} == "-" ]]; then
         number=${1:1}
-        echo $input | tail -$number | head -1
+        ls | tail -$number | head -1
     else
-        echo $input | head -$1 | tail -1
+        ls | head -$1 | tail -1
     fi
 }
 
